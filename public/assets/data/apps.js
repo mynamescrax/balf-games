@@ -14,6 +14,7 @@ var apps = [
     {
       "id": "discord",
       "title": "Discord",
+      "description": "most likely wont work unless discord updates their website and it suddenly works",
       "url": "https://discord.com/app",
       'image': 'https://static.vecteezy.com/system/resources/previews/006/892/625/original/discord-logo-icon-editorial-free-vector.jpg'
     },
@@ -64,6 +65,13 @@ var apps = [
       'title': 'P-Stream',
       'url': 'https://pstream.mov/',
       'image': 'https://avatars.githubusercontent.com/u/191057509?s=200&v=4'
+    },
+    {
+      'id': 'palyra',
+      'title': 'Palyra (Discord alternative)',
+      'description': 'Please dont have any personal information or use a personal password on this website',
+      'url': 'https://palyra.vercel.app',
+      'image': 'https://palyra.vercel.app/images/icon.png'
     },
     {
       'id': 'spenflix',
