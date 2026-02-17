@@ -1,0 +1,203 @@
+@import url(master.css);
+
+nav {
+  position: fixed;
+  right: 20px;               /* distance from right edge */
+  top: 50%;                  /* move to vertical center */
+  transform: translateY(-50%);
+
+  display: flex;
+  flex-direction: column;    /* stack items vertically */
+  align-items: center;
+  justify-content: center;
+
+  width: 70px;               /* sidebar width */
+  padding: 20px 0;
+  border-radius: 20px;
+
+  background-color: var(--navbar);
+}
+
+.navitem {
+  position: relative;
+}
+
+.nav-label {
+  position: absolute;
+  right: 90px;              /* adjust if needed */
+  
+  background: #0b3d91;      /* dark blue */
+  color: #ffffff;           /* white text */
+
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  white-space: nowrap;
+
+  opacity: 0;
+  transform: translateX(10px);
+  transition: 0.25s ease;
+  pointer-events: none;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.navitem a:hover .nav-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
+.navitem img {
+  width: 40px;      /* icon size */
+  height: 40px;
+  pointer-events: none;
+}
+
+.navitem a {
+  width: 50px;
+  height: 50px;
+}
+
+/* Sidebar sits on top of the page instead of changing layout */
+nav {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999; /* keep it above content */
+}
+
+
+
+nav .navitem {
+  display: flex;
+  align-items: center;
+}
+
+nav .navitems {
+  display: flex;
+  flex-direction: column;   /* vertical items */
+  align-items: center;
+  gap: 25px;                /* spacing between icons */
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 18px;
+  margin: 10px;
+  transition: all 0.6s;
+  padding: 10px 15px;
+  border-radius: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s all;
+
+}
+
+nav a:visited {
+  color: var(--text);
+}
+
+nav img {
+  height: 40px;
+}
+
+nav .navitem a {
+  position: relative;
+}
+
+nav a[selected], nav .navitem a:hover {
+  background-color: var(--accent);
+  text-decoration: none;
+  color: var(--background);
+  filter: brightness(100%);
+}
+
+/*nav .navitem a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: var(--accent);
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+  }
+
+  nav .navitem a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}*/
+
+nav .navitem a:hover {
+  text-decoration: none;
+  filter: brightness(100%)
+}
+
+
+
+nav a {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+}
+
+
+
+
+/*.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: var(--navbar);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 150%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: 0.6s opacity;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent var(--navbar) transparent;
+}*/
+
+.navitem a span {
+  width: 0; /* Initial position outside the parent */
+  opacity: 0; /* Initial opacity */
+  transition: 0.3s all; /* Transition properties */
+}
+
+.navitem a:hover span {
+  width: 100%; /* Slide in the span to the original position */
+  opacity: 1; /* Fade in the span */
+}

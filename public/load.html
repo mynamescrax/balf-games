@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="shortcut icon" href="./assets/images/icon.png" type="image/png" />
+  <title>Art Class</title>
+
+  <link rel="stylesheet" href="./css/master.css" />
+
+  <script src="/uv/uv.bundle.js" charset="UTF-8"></script>
+  <script src="/uv/uv.config.js"></script>
+  <script src="./js/preload.js"></script>
+  
+  <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+</head>
+
+<body theme="main">
+<nav>
+  <div class="logo">
+    <a href="/index.html">
+      <img src="./assets/images/icon.png" alt="Balf Games Logo" draggable="false" class="logo-img" />
+    </a>
+  </div>
+
+  <p id="time"></p>
+
+  <div class="navitems">
+    <div class="navitem">
+      <a href="/index.html">
+        <img src="./assets/images/home.png" alt="Home" draggable="false" />
+      </a>
+    </div>
+
+    <div class="navitem">
+      <a href="/maths.html">
+        <img src="./assets/images/games.png" alt="Games" draggable="false" />
+      </a>
+    </div>
+
+    <div class="navitem">
+      <a href="/apps.html">
+        <img src="./assets/images/apps.png" alt="Apps" draggable="false" />
+      </a>
+    </div>
+
+    <div class="navitem">
+      <a href="/emulator.html">
+        <img src="./assets/images/emulator.png" alt="Emulator" draggable="false" />
+      </a>
+    </div>
+
+    <div class="navitem">
+      <a href="/search.html">
+        <img src="./assets/images/search.png" alt="Search" draggable="false" />
+      </a>
+    </div>
+  </div>
+</nav>
+
+
+  <div class="gamecontainer">
+    <iframe allowfullscreen frameborder="0" id="frame"></iframe>
+    <div id="gameInfo">
+      <div class="gameHeader">
+        <img id="gameImage" alt="icon" />
+        <h3 id="gameTitle"></h3>
+      </div>
+      <p id="gameDescription"></p>
+
+      <div id="menubtns">
+        <a href="./maths.html">
+          <button onclick="window.location.href = '/'">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+        </a>
+        <button onclick="document.querySelector('iframe').requestFullscreen()">
+          <i class="fas fa-expand"></i>
+        </button>
+        <button onclick="favorite()">
+          <i class="favorited far fa-star"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="./js/index.js"></script>
+<script src="./assets/data/games.js"></script>
+<script src="./assets/data/apps.js"></script>
+<script src="./js/load.js"></script>
+
+<script type="text/javascript">
+    aclib.runAutoTag({
+        zoneId: '6hmeyutild',
+    });
+</script>
+
+</html>

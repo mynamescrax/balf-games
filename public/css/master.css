@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=JetBrains+Mono:wght@300;400&display=swap');
+@import url(main.css);
+@import url(themes.css);
+@import url(nav.css);
+
+@font-face {
+    font-family: gg sans;
+    font-style: normal;
+    font-weight: 400;
+    src: url(/assets/fonts/ggsans.woff2) format("woff2")
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 400;
+}
+
+body {
+background-color: var(--background);
+
+/* moving grid layers */
+--grid-size: 42px;
+--grid-line: rgba(255, 255, 255, 0.08);
+--grid-glow: rgba(255, 255, 255, 0.03);
+
+background-image:
+  linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+  linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px),
+  radial-gradient(circle at 50% 50%, var(--grid-glow), transparent 55%);
+
+background-size:
+  var(--grid-size) var(--grid-size),
+  var(--grid-size) var(--grid-size),
+  900px 900px;
+
+animation: grid-drift 14s linear infinite;
+
+  color: var(--text-color);
+}
+
+@keyframes grid-drift {
+  from { background-position: 0 0, 0 0, 0 0; }
+  to   { background-position: var(--grid-size) var(--grid-size), calc(var(--grid-size) * -1) var(--grid-size), 220px 120px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none; }
+}
+

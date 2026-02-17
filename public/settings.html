@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="./assets/images/icon.png" type="image/png" />
+    <title>Balf Games</title>
+
+    <link rel="stylesheet" href="./css/master.css" />
+
+    <script src="/uv/uv.bundle.js" charset="UTF-8"></script>
+    <script src="/uv/uv.config.js"></script>
+    <script src="./js/preload.js"></script>
+
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+  </head>
+
+  <body theme="main">
+    <nav>
+      <div class="logo">
+        <a href="/index.html">
+          <img
+            src="./assets/images/icon.png"
+            alt="Balf Games Logo"
+            draggable="false"
+            class="logo-img"
+          />
+        </a>
+      </div>
+
+      <p id="time"></p>
+
+      <div class="navitems">
+        <div class="navitem">
+          <a href="/index.html">
+            <img src="./assets/images/home.png" alt="Home" draggable="false" />
+            <span class="nav-label">Home</span>
+          </a>
+        </div>
+
+        <div class="navitem">
+          <a href="/maths.html">
+            <img src="./assets/images/games.png" alt="Games" draggable="false" />
+            <span class="nav-label">Games</span>
+          </a>
+        </div>
+
+        <div class="navitem">
+          <a href="/apps.html">
+            <img src="./assets/images/apps.png" alt="Apps" draggable="false" />
+            <span class="nav-label">Apps</span>
+          </a>
+        </div>
+
+        <div class="navitem">
+          <a href="/emulator.html">
+            <img src="./assets/images/emulator.png" alt="Emulator" draggable="false" />
+            <span class="nav-label">Emulator</span>
+          </a>
+        </div>
+
+        <div class="navitem">
+          <a href="/search.html">
+            <img src="./assets/images/search.png" alt="Search" draggable="false" />
+            <span class="nav-label">Search</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="center-container">
+      <h1>Settings</h1>
+
+      <h2>Tab cloaking</h2>
+      <input type="text" id="tabname" placeholder="Tab name" />
+      <button onclick="setTab()" class="secondary">Set tab name</button>
+      <br />
+      <input type="text" id="tabicon" placeholder="Tab icon" />
+      <button onclick="setTab()" class="secondary">Set tab icon</button>
+      <br />
+
+      <button class="secondary" onclick="setTabPreset('default')">
+        <img src="/assets/images/icon.png" />
+      </button>
+      <button class="secondary" onclick="setTabPreset('google')">
+        <img src="https://static-00.iconduck.com/assets.00/google-icon-2048x2048-czn3g8x8.png" />
+      </button>
+      <button class="secondary" onclick="setTabPreset('drive')">
+        <img src="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png" />
+      </button>
+      <button class="secondary" onclick="setTabPreset('docs')">
+        <img src="https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico" />
+      </button>
+      <button class="secondary" onclick="setTabPreset('classroom')">
+        <img src="https://ssl.gstatic.com/classroom/ic_product_classroom_32.png" />
+      </button>
+
+      <br /><br />
+
+      <h2>Themes</h2>
+      <select id="theme-select">
+        <option value="main">Default</option>
+        <option value="matrix">Matrix</option>
+        <option value="beach">Beach</option>
+      </select>
+
+      <br /><br />
+
+      <h2>Panic Key</h2>
+      <h4>
+        WARNING: Panic keys trigger whenever you click that key whenever you click it,
+        including typing on this page, so set it to a key you don't click often.
+      </h4>
+      <input type="text" id="panickey" placeholder="Panic key" />
+      <button onclick="setPanicKey()" class="secondary">Set panic key</button>
+      <br />
+      <input type="text" id="panicurl" placeholder="Panic url" />
+      <button onclick="setPanicUrl()" class="secondary">Set panic url</button>
+      <br />
+      <button onclick="detectPanic()" id="panickeybtn" class="secondary">
+        Auto-detect panic key
+      </button>
+
+      <br /><br />
+
+      <div class="bottom-links">
+        <a href="./about.html" class="button secondary">About</a>
+        <a href="./index.html" class="button secondary">Home</a>
+      </div>
+    </div>
+
+    <script src="./js/index.js"></script>
+    <script src="./js/settings.js"></script>
+
+    <script type="text/javascript">
+      aclib.runAutoTag({ zoneId: "6hmeyutild" });
+    </script>
+  </body>
+</html>
