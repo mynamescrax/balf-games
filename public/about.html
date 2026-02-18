@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="shortcut icon" href="./assets/images/icon.png" type="image/png" />
+    <title>Balf Games</title>
+
+    <link rel="stylesheet" href="./css/master.css" />
+    <link rel="stylesheet" href="./css/nav.css" />
+
+    <script defer src="/uv/uv.bundle.js"></script>
+    <script defer src="/uv/uv.config.js"></script>
+    <script defer src="./js/preload.js"></script>
+
+    <script id="aclib" src="//acscdn.com/script/aclib.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+    <!-- Sidebar Toggle -->
+    <input class="nav-toggle" type="checkbox" id="navToggle" />
+
+    <nav class="sidebar" aria-label="Primary">
+      <!-- Blue clickable edge (toggle) -->
+      <label class="sidebar-edge" for="navToggle" aria-label="Toggle sidebar"></label>
+
+      <div class="logo">
+        <a href="/index.html" aria-label="Go to home">
+          <img class="logo-img" src="./assets/images/icon.png" alt="Balf Games" draggable="false" />
+        </a>
+      </div>
+
+      <p id="time"></p>
+
+      <div class="navitems">
+        <div class="navitem">
+          <a href="/index.html">
+            <img src="./assets/images/home.png" alt="" />
+            <span class="nav-label">Home</span>
+          </a>
+        </div>
+
+        <div class="navitem">
+          <a href="/maths.html">
+            <img src="./assets/images/games.png" alt="" />
+            <span class="nav-label">Games</span>
+          </a>
+        </div>
+
+        <div class="navitem">
+          <a href="/apps.html">
+            <img src="./assets/images/apps.png" alt="" />
+            <span class="nav-label">Apps</span>
+          </a>
+        </div>
+
+        <div class="navitem">
+          <a href="/emulator.html">
+            <img src="./assets/images/emulator.png" alt="" />
+            <span class="nav-label">Emulator</span>
+          </a>
+        </div>
+
+        <div class="navitem">
+          <!-- "selected" isn't valid on <a>; aria-current is the standard -->
+          <a href="/search.html" aria-current="page">
+            <img src="./assets/images/search.png" alt="" />
+            <span class="nav-label">Search</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main content ("More"-style glass panels) -->
+    <main class="more-wrap">
+      <header class="more-title">
+        <div class="more-plus" aria-hidden="true">+</div>
+        <h1>More</h1>
+      </header>
+
+      <div class="more-grid">
+        <!-- LEFT PANEL -->
+        <section class="glass-panel" aria-labelledby="credits-title">
+          <div class="panel-head">
+            <div class="panel-icon" aria-hidden="true">&lt;/&gt;</div>
+            <h2 id="credits-title">Credits</h2>
+            <p class="panel-sub">credits to art class v4 on github for the original source, truffled for the inspired design and frogies cuz its good</p>
+          </div>
+
+          <div class="tile-row">
+            <a class="tile" href="https://frogiesarcade.win/" target="_blank" rel="noopener">
+              <div class="tile-img circle">
+                <img src="/assets/images/frogies.png" alt="Frogies Arcade" />
+              </div>
+              <div class="tile-label">frogies</div>
+            </a>
+
+             <a class="tile" href="https://truffled.lol/" target="_blank" rel="noopener">
+              <div class="tile-img circle">
+                <img src="/assets/images/truffled.png" alt="Truffled.lol" />
+              </div>
+              <div class="tile-label">truffled</div>
+            </a>
+        </section>
+
+        <!-- RIGHT PANEL -->
+        <section class="glass-panel" aria-labelledby="partners-title">
+          <div class="panel-head">
+            <div class="panel-icon" aria-hidden="true">🤝</div>
+            <h2 id="partners-title">Partners</h2>
+            <p class="panel-sub">Other Cool Sites</p>
+          </div>
+
+          <div class="tile-row">
+            <a class="tile" href="#">
+              <div class="tile-img dark" aria-hidden="true">tuff</div>
+              <div class="tile-label">we dont have any partners</div>
+            </a>
+          </div>
+        </section>
+
+        <!-- BOTTOM PANEL -->
+        <section class="glass-panel glass-panel-wide" aria-labelledby="dmca-title">
+          <div class="panel-head">
+            <div class="panel-icon" aria-hidden="true">🔨</div>
+            <h2 id="dmca-title">DMCA Notice</h2>
+            <p class="panel-sub">If you believe content should be removed, use the forum on the front page. We host no content here.</p>
+          </div>
+
+          <div class="bottom-links">
+            <a class="button secondary" href="./settings.html">Settings</a>
+            <a class="button secondary" href="./index.html">Home</a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script defer src="./js/index.js"></script>
+
+    <script>
+      // Ads / tagging
+      aclib.runAutoTag({ zoneId: "6hmeyutild" });
+    </script>
+  </body>
+</html>
