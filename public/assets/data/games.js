@@ -41,13 +41,6 @@ var games = [
     image: 'https://crazygames.cdn.msnfun.com/9nm5764dbppg/v8/logo.png'
   },
   {
-    id: 'veckio',
-    title: 'Veck.io',
-    description: 'Veck.io is a 3D multiplayer FPS IO shooting game with nonstop action among players across the globe. Players can compete in arcade mode, team battles ranging from 1v1 to 4v4, or fast-paced Gun Game challenges.',
-    url: 'https://agaronline.io/veck-io.embed',
-    image: 'https://hollowknight.io/data/image/game/veck-io/veck-io.png'
-  },
-  {
     id: 'burritobison',
     title: 'Burrito Bison',
     description: 'Stolen by an evil chef, Burrito Bison seeks out his cookbook to take back with him to make the finest salsa in the world. So strap on your rocket belt, and launch your way to glory! Features: *Three powerful wrestlers: Burrito Bison now gets to adventure with friends!',
@@ -303,7 +296,7 @@ var games = [
     id: 'amongus',
     title: 'Among Us',
     description: 'Work together to complete tasks — but beware, an impostor is trying to sabotage everyone.',
-    url: 'https://stgames.top/unity/amongus/',
+    url: 'https://html5.gamemonetize.co/luye5rleios737wp2o9wjq7h577gl937/',
     image: 'https://play-lh.googleusercontent.com/8ddL1kuoNUB5vUvgDVjYY3_6HwQcrg1K2fd_R8soD-e2QYj8fT9cfhfh3G0hnSruLKec'
   },
   {
@@ -366,6 +359,3 @@ if (customgames) customgames.forEach(game => {
 
 console.log("Loaded " + games.length + " games")
 if (customgames) console.log("Loaded " + customgames.length + " custom games")
-
-
-
