@@ -44,7 +44,7 @@ var games = [
     id: 'veckio',
     title: 'Veck.io',
     description: 'Veck.io is a 3D multiplayer FPS IO shooting game with nonstop action among players across the globe. Players can compete in arcade mode, team battles ranging from 1v1 to 4v4, or fast-paced Gun Game challenges.',
-    url: 'https://yoplay.io/veckio.embed',
+    url: 'https://www.rocketgames.io/gameframe/veck-io',
     image: 'https://hollowknight.io/data/image/game/veck-io/veck-io.png'
   },
   {
@@ -366,3 +366,4 @@ if (customgames) customgames.forEach(game => {
 
 console.log("Loaded " + games.length + " games")
 if (customgames) console.log("Loaded " + customgames.length + " custom games")
+
