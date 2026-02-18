@@ -14,7 +14,7 @@ Currently i've only tested this on vercel and it works fine.
 You need [NodeJS](https://nodejs.org) and [Git](https://git-scm.com/download) installed on your system.
 
 ````bash
-git clone https://github.com/art-class/v4.git # Clone the repo
+git clone https://github.com/mynamescrax/balf-games # Clone the repo
 npm install # Install packages
 npm start # Start the bare server + serve static files
 ````
