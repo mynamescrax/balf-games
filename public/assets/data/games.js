@@ -191,7 +191,7 @@ var games = [
     id: 'escapeprison',
     title: 'Henry Stickmin: Escaping the Prison',
     description: 'Choose hilarious options and clever strategies to help Henry Stickmin escape from prison successfully.',
-    url: 'https://cloud.onlinegames.io/games/2025/flash/escaping-the-prison/index-og.html/',
+    url: 'https://db.duckmath.org/html/escapetheprison/',
     image: 'https://play-lh.googleusercontent.com/MKW0yzbpA-faDMztP2xkirlXsHwL7QutC_9VyQlbr4VTbPOyCZInL7zYG9EA4XpX4mtM'
   },
   {
@@ -345,4 +345,5 @@ if (customgames) customgames.forEach(game => {
 
 console.log("Loaded " + games.length + " games")
 if (customgames) console.log("Loaded " + customgames.length + " custom games")
+
 
