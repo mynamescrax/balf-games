@@ -23,7 +23,7 @@ var games = [
     id: 'bowmasters',
     title: 'Bowmasters',
     description: 'If you like exciting shooting games, gun games, especially archery games, join the fun and unique battles in the action game Bowmasters!',
-    url: 'https://html5.gamedistribution.com/rvvASMiM/f1f71329bb6e4fbb97bfdc0ad14edafe/index.html?gd_sdk_referrer_url=https%3A%2F%2Fwww.pog.com%2Fgames%2Fbowmasters&key=pog&value=default&gd_zone_config=eyJwYXJlbnRVUkwiOiJodHRwczovL3d3dy5wb2cuY29tL2dhbWVzL2Jvd21hc3RlcnMiLCJwYXJlbnREb21haW4iOiJwb2cuY29tIiwidG9wRG9tYWluIjoicG9nLmNvbSIsImhhc0ltcHJlc3Npb24iOmZhbHNlLCJsb2FkZXJFbmFibGVkIjp0cnVlLCJob3N0IjoiaHRtbDUuZ2FtZWRpc3RyaWJ1dGlvbi5jb20iLCJ2ZXJzaW9uIjoiMS41LjE4In0%253D',
+    url: 'https://www.h5games4u.com/games/Bowmasters/index.html?cid=yyg',
     image: 'https://play-lh.googleusercontent.com/rsQyCuie6S8Munc2Hv6IMpePP1g3c0okLkyKRXd1IimOryIBMZqymGKaOg7bZ6NMkhj3'
   },
   {
@@ -44,7 +44,7 @@ var games = [
     id: 'veckio',
     title: 'Veck.io',
     description: 'Veck.io is a 3D multiplayer FPS IO shooting game with nonstop action among players across the globe. Players can compete in arcade mode, team battles ranging from 1v1 to 4v4, or fast-paced Gun Game challenges.',
-    url: 'https://veck.io/',
+    url: 'https://yoplay.io/veckio.embed',
     image: 'https://hollowknight.io/data/image/game/veck-io/veck-io.png'
   },
   {
@@ -111,17 +111,10 @@ var games = [
     image: 'https://play-lh.googleusercontent.com/gTd127I81O2i2Q6kfCJoN-M0OSWmgsdjB47orUFpLwANW7VZLJYrOxMVt-OpilDXszg=w240-h480-rw'
   },
   {
-    id: 'backrooms',
-    title: 'Backrooms',
-    description: 'Scary game based on the viral 4Chan post.Only works with a keyboard',
-    url: 'https://backroomsgame.io/game/backrooms/',
-    image: 'https://media.wired.com/photos/627b0c1fb6048c47d506c6c0/1:1/w_679,h_679,c_limit/Backrooms-Games.jpg'
-  },
-  {
     id: 'papaburgers',
     title: 'Papa\'s Burgeria',
     description: 'Take customer orders, grill patties, and build perfect burgers in this fast-paced restaurant management game.',
-    url: 'https://www.friv.com/z/assets/scripts/ruffle-251020/flashloader.html?papasburgeria-papasburgeria!4399.com!freedist-640-480',
+    url: 'https://freepapasgames.com/wp-content/uploads/2025/12/Papas-Burgeria.webp',
     image: 'https://i.flipline.com/gamefiles/papasburgeriatogo/app_upsell_C.jpg'
   },
   {
@@ -284,13 +277,6 @@ var games = [
     description: 'A winter-themed version of Geometry Dash featuring intense new levels and music tracks.',
     url: 'https://geometrylitegame.org/geometry-dash-subzero.embed',
     image: 'https://img.utdstc.com/icon/b78/b46/b78b4624b14ac389631cb2b7ee2579f583101fb8559c8a0c36f742a393da0e31:200'
-  },
-  {
-    id: '8ballpool',
-    title: '8 Ball Pool',
-    description: 'Challenge players in realistic 8-ball pool matches and show off your cue skills.',
-    url: 'https://prod-web-pool.miniclip.com/mc?localmc',
-    image: 'https://play-lh.googleusercontent.com/bPz1guJ6FHF3oIOEy3KqwpaDDKO-hLRaZoyzmM8bLFLN8fWm6L0_EuUnkwv9iqPo3Ag'
   },
   {
     id: 'fruitninja',
