@@ -5,6 +5,10 @@
 A website with tons of games, apps, built-in proxy, emulator, and more fun goodies. If you fork this repository, please consider giving it a star ⭐!
 Try out our site at balf-games.vercel.app!
 
+## Deploy to a cloud service
+Currently i've only tested this on vercel and it works fine.
+[![Deploy to Vercel](https://binbashbanana.github.io/deploy-buttons/buttons/remade/vercel.svg)](https://vercel.com/new/clone?repository-url=https://github.com/Louct/balf-games)
+
 ## Run locally
 
 You need [NodeJS](https://nodejs.org) and [Git](https://git-scm.com/download) installed on your system.
