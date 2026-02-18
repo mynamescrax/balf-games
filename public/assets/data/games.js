@@ -1,0 +1,522 @@
+var games = [
+  {
+    id: 'customgame',
+    title: 'Add custom game',
+    description: 'Add your own custom game by entering a title, image, and URL to expand your personal game library.',
+    image: 'assets/images/add.png'
+  },
+  {
+    id: 'thatsnotmyneighbor',
+    title: 'Thats Not My Neighbor',
+    description: 'Thats Not My Neighbor puts you in the shoes of a doorman in 1955, tasked with a seemingly simple yet chilling objective: identify and prevent doppelgangers.',
+    html: 'assets/games/thatsnotmyneighbor.html',
+    image: 'assets/images/thatsnotmyneighbor.png'
+  },
+  {
+    id: 'dummiesworldcup',
+    title: 'Dummies World Cup',
+    description: 'Dummies World Cup is an engaging HTML5 ragdoll-physics soccer game developed by DoonDook and published by Playgama, featuring 32 national teams.',
+    url: 'https://app-394364.games.s3.yandex.net/394364/tmsav243dsk8o8ditvffy0eknu9u6n1g_brotli/index.html?sdk=%2Fsdk%2F_%2Fv2.3520c330047d4543b237.js#origin=https%3A%2F%2Fplayhop.com&app-id=394364&device-type=desktop',
+    image: 'https://doondook.studio/wp-content/uploads/2022/11/Dummeise_World.png'
+  },
+  {
+    id: 'blockblast',
+    title: 'Block Blast',
+    description: 'Block Blast is a popular, fast-paced, and highly addictive, Tetris-style puzzle game where players drag and drop, colorful, wooden-style, block shapes onto an 8x8 grid to fill rows and columns, clearing them for points.',
+    html: 'assets/games/blockblast.html',
+    image: 'assets/images/blockblast.png'
+  },
+  {
+    id: 'wbwwb',
+    title: 'We Become What We Behold',
+    description: 'We Become What We Behold centers on observation in this casual puzzle game. Capture moments of people with different shapes, fueling reactions.',
+    html: 'assets/games/wbwwb.html',
+    image: 'assets/images/wbwwb.png'
+  },
+  {
+    id: 'raft',
+    title: 'Raft',
+    description: 'Raft™ throws you and your friends into an epic adventure out on the big open sea, with the objective to stay alive, gather resources and build yourself a floating home worthy of survival.',
+    html: 'assets/games/raft.html',
+    image: 'assets/images/raft.png'
+  },
+  {
+    id: 'hollowknight',
+    title: 'Hollow Knight',
+    description: 'Hollow Knight is a 2017 Metroidvania video game developed and published by Australian independent developer, Team Cherry.',
+    html: 'assets/games/hollowknight.html',
+    image: 'assets/images/hollowknight.png'
+  },
+  {
+    id: 'amandatv',
+    title: 'Amanda The Adventurer',
+    description: 'A short yet intricate single player horror experience · Animated tapes that tell an unsettling story, all under the guise of a welcoming childrens cartoon.',
+    html: 'assets/games/amandatv.html',
+    image: 'assets/images/amandatv.png'
+  },
+  {
+    id: 'kindergarten',
+    title: 'Kindergarten',
+    description: 'Kindergarten is an abstract puzzle adventure game. You play as a student in a school that’s a bit…off.',
+    html: 'assets/games/kindergarten.html',
+    image: 'assets/images/kindergarten.png',
+  },
+  {
+    id: 'kindergarten2',
+    title: 'Kindergarten 2',
+    description: 'Kindergarten 2 is an abstract puzzle adventure game. You play as a student in a school that’s a bit…off.',
+    html: 'assets/games/kindergarten2.html',
+    image: 'assets/images/kindergarten2.png',
+  },
+  {
+    id: 'kindergarten3',
+    title: 'Kindergarten 3',
+    description: 'Kindergarten 3 is an abstract puzzle adventure game. You play as a student in a school that’s a bit…off.',
+    html: 'assets/games/kindergarten3.html',
+    image: 'assets/images/kindergarten3.png',
+  },
+  {
+    id: 'badrocketleague',
+    title: ' Bad Rocket League',
+    description: 'A high-speed soccer game with rocket-powered cars. Score goals, perform aerial tricks, and compete in fast-paced matches.',
+    html: 'assets/games/rocketleague.html',
+    image: 'https://www.softgozar.com/Image/Softwares/Thumbnail/Rocket_League_Anniversary_SoftGozar.com.png'
+  },
+  {
+    id: 'petrocksimulator',
+    title: 'Pet Rock Simulator',
+    description: 'Take care of your own pet rock!',
+    html: 'assets/games/petrocksim.html',
+    image: 'assets/images/petrocksim.png',
+  },
+  {
+    id: 'repo',
+    title: 'R.E.P.O',
+    description: 'R.E.P.O. is an online cooperative survival horror video game developed and published by Swedish game studio Semiwork for Windows. CLICK ON THE SCREEN IF IT DOESNT LOOK LIKE ITS LOADING!',
+    html: 'assets/games/repo.html',
+    image: 'assets/images/repo.png'
+  },
+  {
+    id: 'slimerancher',
+    title: 'Slime Rancher',
+    description: 'Slime Rancher is a charming, first-person, sandbox experience. Play as Beatrix LeBeau: a plucky, young rancher who sets out for a life a thousand light years away from Earth on the ‘Far, Far Range.',
+    html: 'assets/games/slimerancher.html',
+    image: 'assets/images/slimerancher.png'
+  },
+  {
+    id: 'cuphead',
+    title: 'Cuphead',
+    description: 'Cuphead is a 2017 indie run and gun game developed and published by Studio MDHR. The game follows its titular teacup-headed character and his brother Mugman.',
+    html: 'assets/games/cuphead.html',
+    image: 'assets/images/cuphead.png'
+  },
+  {
+    id: 'ultrakill',
+    title: 'Ultrakill',
+    description: 'ULTRAKILL is a fast-paced, ultraviolent retro FPS blending Quake’s speed, Doom’s carnage, and Devil May Cry’s style.',
+    html: 'assets/games/ultrakill.html',
+    image: 'assets/images/ultrakill.png'
+  },
+  {
+    id: 'buckshotroulette',
+    title: 'Buckshhot Roulette',
+    description: 'Play Russian roulette with a 12-gauge shotgun. Four enter. One leaves. Roll the dice with your life. Good luck!',
+    html: 'assets/games/buckshotroulette.html',
+    image: 'assets/images/buckshotroulette.png'
+  },
+  {
+    id: 'fnaf',
+    title: "Five Nights At Freddy's",
+    description: 'fnaf scare bru stop',
+    html: 'assets/games/FNAF.html',
+    image: 'assets/images/fnaf.png',
+  },
+  {
+    id: 'fnae',
+    title: "Five Nights At Epstein's",
+    description: 'brooo epstein noooo stop diddle mee owwww',
+    html: 'assets/games/fnae.html',
+    image: 'assets/images/fnae.png'
+  },
+  {
+    id: 'fnaf2',
+    title: "Five Nights At Freddy's 2",
+    description: 'fnaf scare bru stop',
+    html: 'assets/games/FNAF2.html',
+    image: 'assets/images/fnaf2.png',
+  },
+  {
+    id: 'fnaf3',
+    title: "Five Nights At Freddy's 3",
+    description: 'fnaf scare bru stop',
+    html: 'assets/games/FNAF3.html',
+    image: 'assets/images/fnaf3.png',
+  },
+  {
+    id: 'fnaf4',
+    title: "Five Nights At Freddy's 4",
+    description: 'fnaf scare bru stop',
+    html: 'assets/games/FNAF4.html',
+    image: 'assets/images/fnaf4.png',
+  },
+  {
+    id: 'rocketsoccerderby',
+    title: 'Rocket Soccer Derby',
+    description: 'A high-speed soccer game with rocket-powered cars. Score goals, perform aerial tricks, and compete in fast-paced matches.',
+    html: 'assets/games/rocketderby.html',
+    image: 'https://play-lh.googleusercontent.com/ZSLQpJsfi6GrsPoTpKh-IDkR_YcBdIG96pUi6KToYrHssFKkuV1lQQ5sLf08f5He3bE'
+  },
+  {
+    id: 'beeswarmsimulator',
+    title: 'Bee Swarm Simulator',
+    description: 'Bee Swarm Simulator is a popular Roblox game created by Onett where players cultivate a swarm of bees to collect pollen, produce honey, and explore a vast, colorful world. The objective is to upgrade your hive, purchase better equipment, complete quests for bears, and unlock new, higher-level areas on the mountain.',
+    url: 'https://dddatt.github.io/bss/',
+    image: 'https://static.wikia.nocookie.net/bee-swarm-simulator/images/5/5b/Basic_Bee_OriginalIcon.png/revision/latest/scale-to-width-down/512?cb=20240110223931'
+  },
+  {
+    id: 'bowmasters',
+    title: 'Bowmasters',
+    description: 'If you like exciting shooting games, gun games, especially archery games, join the fun and unique battles in the action game Bowmasters!',
+    html: 'assets/games/bowmasters.html',
+    image: 'https://play-lh.googleusercontent.com/rsQyCuie6S8Munc2Hv6IMpePP1g3c0okLkyKRXd1IimOryIBMZqymGKaOg7bZ6NMkhj3'
+  },
+  {
+    id: 'geometrydashworld',
+    title: 'Geometry Dash World',
+    description: 'Geometry Dash World is a fast-paced rhythm platformer where you jump, fly, and dodge deadly obstacles in sync with energetic music. Simple controls, vibrant levels, and intense challenges make it easy to play—but hard to master.',
+    html: 'assets/games/gdworld.html',
+    image: 'https://play-lh.googleusercontent.com/eu0Lv1QtDbCdVvuphJh84zxKNURIEcXjmZPhAv4NM4Xacfjum9TspfYkzRcBKv4zpDk'
+  },
+  {
+    id: 'burritobison',
+    title: 'Burrito Bison',
+    description: 'Stolen by an evil chef, Burrito Bison seeks out his cookbook to take back with him to make the finest salsa in the world. So strap on your rocket belt, and launch your way to glory! Features: *Three powerful wrestlers: Burrito Bison now gets to adventure with friends!',
+    url: 'https://www.silvergames.com/en/burrito-bison/gameframe',
+    image: 'https://play-lh.googleusercontent.com/vpTgm9u7-GzZP_MceTWpDi0HbinXd_4phCoTwf4ZspFL-115FtNRdo_SU1p-khLDnLA'
+  },
+  {
+    id: 'stealabrainrot',
+    title: 'Steal a Brainrot',
+    description: 'Steal a Brainrot is a 2025 multiplayer video game developed by SpyderSammy (also known as Sammy). In the game, players buy and steal Brainrots, characters based on the Italian brainrot meme, which generate income over time.',
+    html: 'assets/games/sab.html',
+    image: 'https://cdn.jsdelivr.net/gh/mathlesson/mathlesson.github.io/img/steal-a-brainrot.jpg'
+  },
+  {
+    id: 'stealabrainrot2',
+    title: 'Steal a Brainrot 2',
+    description: 'Steal a Brainrot is a 2025 multiplayer video game developed by SpyderSammy (also known as Sammy). In the game, players buy and steal Brainrots, characters based on the Italian brainrot meme, which generate income over time.',
+    html: 'assets/games/sab2.html',
+    image: 'https://cdn.jsdelivr.net/gh/mathlesson/mathlesson.github.io/img/steal-a-brainrot.jpg'
+  },
+  {
+    id: 'crazycattle3d',
+    title: 'Crazy Cattle 3D',
+    description: 'Crazy Cattle 3D is a hilarious survival game where you control explosive sheep! Bump rivals, dodge hazards, and become the last sheep standing.',
+    url: 'https://crazycattle3donline.io/crazy-cattle-3d.embed',
+    image: 'https://img.itch.zone/aW1nLzIwNzkwNDg0LnBuZw==/315x250%23c/O5flR4.png'
+  },
+  {
+    id: 'cookieclicker',
+    title: 'Cookie Clicker',
+    description: 'Cookie Clicker is an addictive incremental game where players click to produce cookies, unlock upgrades, and aim to amass an ever-growing mountain of delicious digital treats. IF YOU WANT TO SAVE PRESS OPTIONS THEN PRESS SAVE OR IT WILL NOT SAVE! unless you wait 60 seconds.',
+    url: 'https://pisaucer.github.io/boredhtml/games/cookieclicker/',
+    image: 'https://super142.wordpress.com/wp-content/uploads/2022/07/cookie-clicker.jpg'
+  },
+  {
+    id: 'thereisnogame',
+    title: 'There Is No Game',
+    description: 'A hilarious puzzle adventure that insists there is no game. Click, drag, and break the rules to uncover hidden secrets.',
+    url: 'https://pisaucer.github.io/boredhtml/games/thereisnogame/repo/alternate/871000/test.html',
+    image: 'https://play-lh.googleusercontent.com/a6DfrYUL6viV0LAZFplqqA44gE0LHE0PyDnKHgdlydiUvccwzSBWrmRQSx5cjdL74Us=w240-h480-rw'
+  },
+  {
+    id: 'fbwg',
+    title: 'Fireboy and Watergirl',
+    description: 'A 2 player game where you have to work together using logic and teamwork to get to the finish line.',
+    url: 'https://www.friv.com/z/games/fireboyandwatergirlforest/index-x.html',
+    image: 'https://play-lh.googleusercontent.com/5-YcjiTyMrPJEZe078dHMxnCxcg2A_8NWJZQieRvn2Gkf8JOuHZEbTmFyQ9gn5p2lnU'
+  },
+  {
+    id: 'driftboss',
+    title: 'Drift Boss',
+    description: 'Test your reflexes by drifting around sharp corners on a narrow platform. One wrong move and you fall!',
+    image: 'https://play-lh.googleusercontent.com/fLrnXuD1B0w6FEDJ1UKmv_TYbNyJ4GwzsQu9ltx57MfIj037nig4cVunG3CYmczkjMDA',
+    url: 'https://frogiesarcade.win/stuff/selfhosted/drift-boss/'
+  },
+  {
+    id: 'cuttherope',
+    title: 'Cut the Rope',
+    description: 'Solve physics-based puzzles by cutting ropes at the right time to feed candy to the adorable monster, Om Nom. CHANGE LANGUAGE TO ENGLISH',
+    html: 'assets/games/cuttherope.html',
+    image: 'https://play-lh.googleusercontent.com/8FNcAyLXtQB_0Ux2ZO8VZoEoihL6a5VMBNf6V2lydRM24hXLnNUdlEup1d5miVjl3JY'
+  },
+  {
+    id: 'tombofthemask',
+    title: 'Tomb of the Mask',
+    description: 'An arcade-style vertical maze runner where you slide through walls, avoid traps, and collect coins at lightning speed.',
+    html: 'assets/games/totm.html',
+    image: 'https://play-lh.googleusercontent.com/gTd127I81O2i2Q6kfCJoN-M0OSWmgsdjB47orUFpLwANW7VZLJYrOxMVt-OpilDXszg=w240-h480-rw'
+  },
+  {
+    id: 'amongus',
+    title: 'Among Us',
+    description: 'Work together to complete tasks — but beware, an impostor is trying to sabotage everyone.',
+    html: 'assets/games/amongus.html',
+    image: 'https://play-lh.googleusercontent.com/8ddL1kuoNUB5vUvgDVjYY3_6HwQcrg1K2fd_R8soD-e2QYj8fT9cfhfh3G0hnSruLKec'
+  },
+  {
+    id: 'baldisbasics',
+    title: 'Baldi\'s Basics',
+    description: 'A horror-comedy school game where you solve math problems and avoid Baldi roaming the halls.',
+    html: 'assets/games/baldisbasics.html',
+    image: 'https://frogiesarcade.win/stuff/games/baldi.png',
+  },
+  {
+    id: 'papaburgers',
+    title: 'Papa\'s Burgeria',
+    description: 'Take customer orders, grill patties, and build perfect burgers in this fast-paced restaurant management game.',
+    url: 'https://freepapasgames.com/wp-content/uploads/2025/12/Papas-Burgeria.webp',
+    image: 'https://i.flipline.com/gamefiles/papasburgeriatogo/app_upsell_C.jpg'
+  },
+  {
+    id: 'papasicecream',
+    title: 'Papa\'s Scooperia',
+    description: 'Serve delicious ice cream sundaes by scooping, baking cookies, and adding toppings to satisfy picky customers.',
+    url: 'https://papa-s-scooperia.game-files.crazygames.com/ruffle/papasscooperia_v102.html?isNewUser=false&skipPrerollFirstSession=true&v=1.350',
+    image: 'https://play-lh.googleusercontent.com/KpLBHo89bWG3jmuYb_KqDD1rZSY4XzXcHiMLZ1PCv83GMwVMcJluuuXrT32oQGCo51A'
+  },
+  {
+    id: 'jetpackjoyride',
+    title: 'Jetpack Joyride',
+    description: 'Fly through a high-tech lab using a jetpack while dodging lasers, missiles, and obstacles in this endless runner.',
+    url: 'https://abinbins.github.io/a7/jetpack-joyride/',
+    image: 'https://cdn.jsdelivr.net/gh/mathlesson/mathlesson.github.io/jetpackjoyride.webp',
+  },
+  {
+    id: 'plantsvszombies',
+    title: 'Plants Versus Zombies',
+    description: 'Plants Versus Zombies is a tower defense game where the player has to use plants with different abilities to defend their home against a zombie invasion',
+    url: 'https://glcdn.githack.com/kaioxdev/legacy-assets/-/raw/main/plants%20vs%20zombies%201/plants%20vs%20zombies.html',
+    image: 'https://upload.wikimedia.org/wikipedia/en/d/da/Plants_vs_Zombies_logo.png'
+  },
+  {
+    id: 'fnf',
+    title: 'Friday Night Funkin',
+    description: 'A rhythm battle game where you rap against unique opponents and hit notes on beat to win musical showdowns.',
+    url: 'https://fnf.kdata1.com/2026/FNF/811/',
+    image: 'https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=204,height=204,fit=cover,f=auto/0cd0c8bc4dc15c069dba7ccfb6809f6d/friday-night-funkin.png'
+  },
+  {
+    id: 'paperio2',
+    title: 'Paper.io 2',
+    description: 'Expand your territory by drawing lines and capturing space while avoiding other players in this competitive .io game.',
+    url: 'https://games.voodoo.io/paperio2',
+    image: 'https://play-lh.googleusercontent.com/KxcjUrs8S75iOPnKBR2b-s7eGtqbREwLgzttVxaM9Znl5ZxsDCl6qEZHny4rBkMeYA=w240-h480-rw'
+  },
+  {
+    id: 'impossiblequiz',
+    title: 'The Impossible Quiz',
+    description: 'A tricky quiz game filled with absurd, misleading, and hilarious questions that test your logic and patience.',
+    url: 'https://the-impossible-quiz.game-files.crazygames.com/ruffle/theimpossiblequiz.html?isNewUser=false&v=1.350',
+    image: 'https://ih1.redbubble.net/image.489460698.9522/st,small,507x507-pad,600x600,f8f8f8.jpg'
+  },
+  {
+    id: 'littlealchemy',
+    title: 'Little Alchemy',
+    description: 'Combine basic elements like fire, water, air, and earth to discover hundreds of new creations.',
+    url: 'https://littlealchemy.com',
+    image: 'https://www.metacritic.com/a/img/catalog/provider/6/12/6-1-243364-52.jpg'
+  },
+  {
+    id: 'templerun2',
+    title: 'Temple Run 2',
+    description: 'Run, jump, and slide through ancient temples while escaping danger in this endless runner adventure.',
+    url: 'https://templerun-2.io/temple-run-2.embed',
+    image: 'https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=204,height=204,fit=cover,f=auto/b5c8b617f65be7cc4d56dd3657590ae7/temple-run-2.png'
+  },
+  {
+    id: 'stickmanhook',
+    title: 'Stickman Hook',
+    description: 'Swing from hook to hook using physics-based momentum to reach the finish line without falling.',
+    url: 'https://stickman-hook.bitbucket.io/file/',
+    image: 'https://frogiesarcade.win/stuff/games/stickmanhook.jpg'
+  },
+  {
+    id: 'sm64',
+    title: 'Super Mario 64',
+    url: 'https://super-mario-64.gitlab.io/file/',
+    image: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Super_Mario_64.png/250px-Super_Mario_64.png',
+    description: 'Controls: <br>Movement: Arrow Keys <br>A: X <br>B: C <br>R: Q <br>Z: Space <br>Start: Enter <br>C-stick: WASD<br><br>You might need to go into fullscreen for the keybinds to register'
+  },
+  {
+    id: 'minecraft',
+    title: 'Minecraft / Eaglercraft',
+    description: 'Build, explore, and survive in an open sandbox world made of blocks. Craft tools, mine resources, and create anything you imagine.',
+    html: 'assets/games/Minecraft.html',
+    image: 'https://cdn.iconscout.com/icon/free/png-256/minecraft-2752120-2284937.png'
+  },
+  {
+    id: 'escapeprison',
+    title: 'Henry Stickmin: Escaping the Prison',
+    description: 'Choose hilarious options and clever strategies to help Henry Stickmin escape from prison successfully.',
+    url: 'https://db.duckmath.org/html/escapetheprison/',
+    image: 'https://play-lh.googleusercontent.com/MKW0yzbpA-faDMztP2xkirlXsHwL7QutC_9VyQlbr4VTbPOyCZInL7zYG9EA4XpX4mtM'
+  },
+  {
+    id: 'fleeingthecomplex',
+    title: 'Henry Stickmin: Fleeing the Complex',
+    description: 'Make the right choices to help Henry Stickmin escape a high-security complex in this interactive adventure.',
+    url: 'https://art-class.github.io/assets/fleeingthecompound/index.html',
+    image: 'https://play-lh.googleusercontent.com/RDk8BpHUESL9J4H-s-07ZC1sNJol8-aZEzz3OEA99PxTYnsZd8038Y-0wRMpCQKDssU'
+  },
+  {
+    id: 'spacewaves',
+    title: 'Space Waves',
+    description: 'Space Waves is a fast-paced rhythm platformer where you fly, and dodge deadly obstacles in sync with energetic music. Simple controls, unlimited levels, and intense challenges make it easy to play—but hard to master.',
+    html: 'assets/games/spacewaves.html',
+    image: 'https://crazygames.cdn.msnfun.com/9nm5764dbppg/v8/logo.png'
+  },
+  {
+    id: 'infiltratingtheairship',
+    title: 'Henry Stickmin: Infiltrating the Airship',
+    description: 'Help Henry Stickmin infiltrate a massive airship by selecting the correct (and often ridiculous) decisions.',
+    url: 'https://art-class.github.io/assets/infiltratingtheairship/index.html',
+    image: 'https://play-lh.googleusercontent.com/bRVIDUSlmkDM9ZA9xLczm-PuUa0dYPupAG2ZVNXJvCITc3ZkO7PS-t0qKX1T--7f5-k=w240-h480-rw'
+  },
+  {
+    id: 'breakingthebank',
+    title: 'Henry Stickmin: Breaking the Bank',
+    description: 'Pick a strategy (serious or silly) to help Henry Stickmin break into a heavily guarded bank.',
+    url: 'https://art-class.github.io/assets/breakingthebank/index.html',
+    image: 'https://play-lh.googleusercontent.com/I9aDLwmiy5iSjeUPs5IDI3lam8iWZ1zVnLF-V_EGvClOLuccjwLNNjZ8xltu4AN60io'
+  },
+  {
+    id: 'slope',
+    title: 'Slope',
+    description: 'Roll a ball down a fast-moving neon slope while avoiding obstacles and trying not to fall off the edge.',
+    html: 'assets/games/slope.html',
+    image: 'https://play-lh.googleusercontent.com/uJn2i9h7KxYQarC_c3K4qH6o7gLtflFnhD_dN14MNkzHJ1NeNFzCL69jpB5mT0vCoQs'
+  },
+  {
+    id: 'buildnowgg',
+    title: "Buildnow.gg",
+    description: 'A fast-paced online shooting and building game inspired by battle royale mechanics and competitive arenas.',
+    html: 'assets/games/buildnow.html',
+    image: 'https://play-lh.googleusercontent.com/MdtXwEOt43tY6GV3-IHAwhdmoW-jY4B1rqvA0m1Yj89Bj4et8FfWGL3cCt_lkDvWbWk'
+  },
+  {
+    id: 'crossyroad',
+    title: 'Crossy Road',
+    description: 'Hop across busy roads, rivers, and train tracks while avoiding traffic in this endless arcade classic.',
+    url: 'https://azgames.io/game/crossy-road/',
+    image: 'https://cdn.jim-nielsen.com/ios/512/crossy-road-endless-arcade-2014-12-02.png'
+  },
+  {
+    id: 'monkeymart',
+    title: 'Monkey Mart',
+    description: 'Run your own supermarket! Grow produce, stock shelves, and serve customers to expand your store.',
+    url: 'https://monkeymarket.click/mm/',
+    image: 'https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=314,height=314,fit=cover,f=auto/ce4a204b6d2cc99d1879da0b2282b0d8/monkey-mart.png'
+  },
+  {
+    id: 'subwaysurfers',
+    title: 'Subway Surfers',
+    description: 'Dash through subway tracks, dodge trains, and collect coins in this colorful endless runner.',
+    html: 'assets/games/subwaysurfers.html',
+    image: 'https://cdnb.artstation.com/p/assets/images/images/040/799/939/large/celine-j-1-74-shanghai-icon-1024-x.jpg?1629908071'
+  },
+  {
+    id: 'geometrydash',
+    title: 'Geometry Dash',
+    description: 'Jump and fly through rhythm-based obstacle courses filled with spikes and hazards set to energetic music.',
+    html: 'assets/games/gdlite.html',
+    image: 'https://frogiesarcade.win/stuff/games/geodash.png'
+  },
+  {
+    id: 'geometrydashsubzero',
+    title: 'Geometry Dash SubZero',
+    description: 'A winter-themed version of Geometry Dash featuring intense new levels and music tracks.',
+    html: 'assets/games/gdsubzero.html',
+    image: 'https://img.utdstc.com/icon/b78/b46/b78b4624b14ac389631cb2b7ee2579f583101fb8559c8a0c36f742a393da0e31:200'
+  },
+  {
+    id: 'fruitninja',
+    title: 'Fruit Ninja',
+    description: 'Slice flying fruit with quick swipes while avoiding bombs in this fast-paced arcade classic.',
+    url: 'https://www.coolmathgames.com/sites/default/files/public_games/50823/?gd_sdk_referrer_url=https%3A%2F%2Fwww.coolmathgames.com%2F0-fruit-ninja',
+    image: 'https://play-lh.googleusercontent.com/eJ9OJnbRer1jjg5ZeNAnTXKcGd2B_NEqxCp2UsefcCABeFBaj_pNl_WKYBjup2GVGGc'
+  },
+  {
+    id: 'bloxorz',
+    title: 'Bloxorz',
+    description: 'Roll a rectangular block across platforms and drop it perfectly into the square hole to complete each puzzle. Only works if you got a keyboard',
+    url: 'https://classroom8.github.io/bloxorz/',
+    image: 'https://play-lh.googleusercontent.com/FHpA3r3FHDzVNtBpjpi9Zq8JA81bvRXBEbdkBvL3COOucsMfn_fYYhEFE5g55VkeSQ'
+  },
+  {
+    id: 'basketballstars',
+    title: 'Basketball Stars',
+    description: 'Play one-on-one basketball matches using skill moves, dunks, and quick shots to outscore your opponent.',
+    url: 'https://frogiesarcade.win/stuff/selfhosted/basketball-stars/',
+    image: 'https://frogiesarcade.win/stuff/games/basketball-stars.png'
+  },
+  {
+    id: 'curveball3d',
+    title: 'Curve Ball 3D',
+    description: 'A 3D pong-style game where you curve the ball to outplay your opponent in fast reflex matches.',
+    url: 'https://www.coolmathgames.com/0-curve-ball-3d/play',
+    image: 'https://play-lh.googleusercontent.com/sTHCFQc1HlSFK2jHNsQOabTeKBvgtugFxnSa_uNLWX2euDE7ohRnJhgCDapOZ0gvxlQ'
+  },
+  {
+    id: 'bitlife',
+    title: 'Bitlife',
+    description: 'A life simulation game where your choices shape your character’s story from childhood to old age.',
+    html: 'assets/games/bitlife.html',
+    image: 'https://d.newsweek.com/en/full/1317374/bitlife-ribbons-how-get-all-complete-list-android-ios-cheats-guide-tips-become.jpg?w=1600&h=1600&q=88&f=75befc746fb83a0c568c44ca07bc5e64'
+  },
+  {
+    id: 'btd4',
+    title: 'Bloons TD 4',
+    description: 'Place monkey towers strategically to pop waves of balloons in this classic tower defense game.',
+    url: 'https://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/bloonstowerdefense4/index.html',
+    image: 'https://assets-prd.ignimgs.com/2022/08/16/bloons-td4-button-1660612386362.jpg'
+  },
+  {
+    id: '2048',
+    title: '2048',
+    description: 'Slide numbered tiles to combine them and reach the elusive 2048 tile.',
+    url: 'https://www.coolmathgames.com/0-2048/play',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/220px-2048_logo.svg.png'
+  },
+  {
+    id: 'holeio',
+    title: 'Hole.io',
+    description: 'Control a growing black hole and swallow everything in sight to become the biggest in the arena.',
+    html: 'assets/games/holeio.html',
+    image: 'https://play-lh.googleusercontent.com/PTnoGeHV-bsIF79sW4IX4MzKAKaWj9fBWGvR4AOA4tmW0eYjPo3bVdpPYR7GGeX-0w'
+  },
+  {
+    id: 'brawlguys',
+    title: 'Brawl Guys',
+    description: 'Battle other players in a quick, chaotic arena brawler with simple controls and fast rounds.',
+    url: 'https://lagged.com/api/play2/brawlguys2/',
+    image: 'https://play-lh.googleusercontent.com/EiElcSrd6-o-19roiswSx0AZPzsq6qF3hUGHsSWDl5UVtj7G23DHkneM8ucwqyOmEg'
+  }
+]
+games.sort(function (a, b) {
+  return a.title.localeCompare(b.title);
+});
+var customGameId = "customgame"; // replace with the id of the game you want to pin
+var customGame = games.find(function (game) {
+  return game.id === customGameId;
+});
+games.splice(games.indexOf(customGame), 1);
+games.unshift(customGame);
+
+var customgames = getObj("customgames")
+if (customgames) customgames.forEach(game => {
+  games.push(game)
+})
+
+console.log("Loaded " + games.length + " games")
+if (customgames) console.log("Loaded " + customgames.length + " custom games")
