@@ -293,13 +293,6 @@ var games = [
     image: 'https://frogiesarcade.win/stuff/games/basketball-stars.png'
   },
   {
-    id: 'amongus',
-    title: 'Among Us',
-    description: 'Work together to complete tasks — but beware, an impostor is trying to sabotage everyone.',
-    url: 'https://stgames.top/unity/amongus/',
-    image: 'https://play-lh.googleusercontent.com/8ddL1kuoNUB5vUvgDVjYY3_6HwQcrg1K2fd_R8soD-e2QYj8fT9cfhfh3G0hnSruLKec'
-  },
-  {
     id: 'curveball3d',
     title: 'Curve Ball 3D',
     description: 'A 3D pong-style game where you curve the ball to outplay your opponent in fast reflex matches.',
@@ -359,4 +352,3 @@ if (customgames) customgames.forEach(game => {
 
 console.log("Loaded " + games.length + " games")
 if (customgames) console.log("Loaded " + customgames.length + " custom games")
-
