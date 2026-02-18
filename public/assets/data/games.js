@@ -86,7 +86,7 @@ var games = [
     id: 'petrocksimulator',
     title: 'Pet Rock Simulator',
     description: 'Take care of your own pet rock!',
-    html: 'assets/games/petrocksim.html',
+    url: 'https://html-classic.itch.zone/html/16502919/index.html?v=1771272639',
     image: 'assets/images/petrocksim.png',
   },
   {
