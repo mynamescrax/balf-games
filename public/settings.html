@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="./assets/images/icon.png" type="image/png" />
+    <title>Balf Games</title>
+
+    <link rel="stylesheet" href="./css/master.css" />
+    <link rel="stylesheet" href="./css/nav.css" />
+
+    <!--
+      Settings page layout fixes
+      These styles are intentionally scoped to this page so they don't affect the rest of the site.
+      They address oversized preset icons/buttons and improve spacing/alignment.
+    -->
+    <style>
+      /* Keep the main content readable and centered */
+      .center-container {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 42px 18px;
+        text-align: center;
+      }
+
+      .center-container h1 {
+        margin: 0 0 18px;
+      }
+
+      .center-container h2 {
+        margin: 26px 0 10px;
+      }
+
+      .center-container h4 {
+        max-width: 760px;
+        margin: 10px auto 14px;
+        line-height: 1.35;
+      }
+
+      /* Inputs/selects should not stretch oddly or stack with weird gaps */
+      .center-container input,
+      .center-container select {
+        width: min(520px, 92vw);
+        max-width: 100%;
+        padding: 10px 12px;
+        margin: 8px 0;
+        box-sizing: border-box;
+      }
+
+      /* Arrange input + button as a tidy row on desktop; stack on mobile */
+      .form-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin: 6px 0;
+      }
+
+      .form-row input {
+        flex: 1 1 320px;
+        min-width: min(320px, 92vw);
+        margin: 0;
+      }
+
+      /* Make buttons behave consistently even if global styles are aggressive */
+      .center-container button.secondary,
+      .center-container a.button.secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 0;
+        white-space: nowrap;
+      }
+
+      /* Preset icon buttons: force small, uniform squares */
+      .tab-presets {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+
+      .tab-presets button.secondary {
+        width: 46px;
+        height: 46px;
+        padding: 0;
+        border-radius: 12px;
+      }
+
+      .tab-presets img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+        display: block;
+      }
+
+      .bottom-links {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 26px;
+      }
+    
+    /* =========================
+       Mobile Scroll Fix
+       ========================= */
+    .center-container {
+      position: static !important;
+      left: auto !important;
+      top: auto !important;
+      transform: none !important;
+
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 42px 18px;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .center-container {
+        padding-top: 24px;
+      }
+    }
+
+  </style>
+
+    <script src="/uv/uv.bundle.js" charset="UTF-8"></script>
+    <script src="/uv/uv.config.js"></script>
+    <script src="./js/preload.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+  </head>
+
+  <body theme="main">
+    <!-- Sidebar Toggle -->
+    <input type="checkbox" id="navToggle" class="nav-toggle" />
+
+    <nav class="sidebar">
+      <!-- Blue clickable edge (toggle) -->
+      <label for="navToggle" class="sidebar-edge" aria-label="Toggle sidebar"></label>
+
+      <div class="logo">
+        <a href="/index.html">
+          <img
+            src="./assets/images/icon.png"
+            alt="Balf Games Logo"
+            draggable="false"
+            class="logo-img"
+          />
+        </a>
+      </div>
+
+      <p id="time"></p>
+
+      <div class="navitems">
+        <div class="navitem">
+          <a href="/index.html">
+            <img src="./assets/images/home.png" alt="Home" draggable="false" />
+            <span class="nav-label">Home</span>
+          </a>
+        </div>
+
+        <div class="navitem">
+          <a href="/maths.html">
+            <img src="./assets/images/games.png" alt="Games" draggable="false" />
+            <span class="nav-label">Games</span>
+          </a>
+        </div>
+
+        <div class="navitem">
+          <a href="/apps.html">
+            <img src="./assets/images/apps.png" alt="Apps" draggable="false" />
+            <span class="nav-label">Apps</span>
+          </a>
+        </div>
+
+        <div class="navitem">
+          <a href="/emulator.html">
+            <img src="./assets/images/emulator.png" alt="Emulator" draggable="false" />
+            <span class="nav-label">Emulator</span>
+          </a>
+        </div>
+
+        <div class="navitem">
+          <a href="/search.html">
+            <img src="./assets/images/search.png" alt="Search" draggable="false" />
+            <span class="nav-label">Search</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="center-container">
+      <h1>Settings</h1>
+
+      <h2>Tab cloaking</h2>
+      <div class="form-row">
+        <input type="text" id="tabname" placeholder="Tab name" />
+        <button onclick="setTab()" class="secondary">Set tab name</button>
+      </div>
+
+      <div class="form-row">
+        <input type="text" id="tabicon" placeholder="Tab icon" />
+        <button onclick="setTab()" class="secondary">Set tab icon</button>
+      </div>
+
+      <div class="tab-presets" aria-label="Tab cloak presets">
+        <button class="secondary" onclick="setTabPreset('default')" title="Default">
+          <img src="/assets/images/icon.png" alt="Default" />
+        </button>
+        <button class="secondary" onclick="setTabPreset('google')" title="Google">
+          <img
+            src="https://static-00.iconduck.com/assets.00/google-icon-2048x2048-czn3g8x8.png"
+            alt="Google"
+          />
+        </button>
+        <button class="secondary" onclick="setTabPreset('drive')" title="Google Drive">
+          <img
+            src="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png"
+            alt="Google Drive"
+          />
+        </button>
+        <button class="secondary" onclick="setTabPreset('docs')" title="Google Docs">
+          <img
+            src="https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico"
+            alt="Google Docs"
+          />
+        </button>
+        <button class="secondary" onclick="setTabPreset('classroom')" title="Google Classroom">
+          <img
+            src="https://ssl.gstatic.com/classroom/ic_product_classroom_32.png"
+            alt="Google Classroom"
+          />
+        </button>
+      </div>
+
+      <br /><br />
+
+      <h2>Themes</h2>
+      <select id="theme-select">
+        <option value="main">Default</option>
+        <option value="matrix">Matrix</option>
+        <option value="beach">Beach</option>
+      </select>
+
+      <br /><br />
+
+      <h2>Panic Key</h2>
+      <h4>
+        WARNING: Panic keys trigger whenever you click that key whenever you click it,
+        including typing on this page, so set it to a key you don't click often.
+      </h4>
+      <div class="form-row">
+        <input type="text" id="panickey" placeholder="Panic key" />
+        <button onclick="setPanicKey()" class="secondary">Set panic key</button>
+      </div>
+
+      <div class="form-row">
+        <input type="text" id="panicurl" placeholder="Panic url" />
+        <button onclick="setPanicUrl()" class="secondary">Set panic url</button>
+      </div>
+
+      <div class="form-row">
+        <button onclick="detectPanic()" id="panickeybtn" class="secondary">
+          Auto-detect panic key
+        </button>
+      </div>
+
+      <br /><br />
+
+      <div class="bottom-links">
+        <a href="./about.html" class="button secondary">About</a>
+        <a href="./index.html" class="button secondary">Home</a>
+      </div>
+    </div>
+
+    <script src="./js/index.js"></script>
+    <script src="./js/settings.js"></script>
+
+    <script type="text/javascript">
+      aclib.runAutoTag({ zoneId: "6hmeyutild" });
+    </script>
+  </body>
+</html>
