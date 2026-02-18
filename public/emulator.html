@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" href="./assets/images/icon.png" type="image/png" />
+  <title>Balf Games</title>
+
+  <link rel="stylesheet" href="./css/master.css" />
+  <link rel="stylesheet" href="./css/nav.css" />
+  <script src="/uv/uv.bundle.js"></script>
+  <script src="/uv/uv.config.js"></script>
+  <script src="./js/preload.js"></script>
+  <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+</head>
+
+<body theme="main">
+
+  <!-- Sidebar Toggle -->
+  <input type="checkbox" id="navToggle" class="nav-toggle" />
+
+  <nav class="sidebar">
+    <!-- Blue clickable edge (toggle) -->
+    <label for="navToggle" class="sidebar-edge" aria-label="Toggle sidebar"></label>
+
+    <div class="logo">
+      <a href="/index.html">
+        <img src="./assets/images/icon.png" class="logo-img" draggable="false">
+      </a>
+    </div>
+
+    <p id="time"></p>
+
+    <div class="navitems">
+
+      <div class="navitem">
+        <a href="/index.html">
+          <img src="./assets/images/home.png">
+          <span class="nav-label">Home</span>
+        </a>
+      </div>
+
+      <div class="navitem">
+        <a href="/maths.html">
+          <img src="./assets/images/games.png">
+          <span class="nav-label">Games</span>
+        </a>
+      </div>
+
+      <div class="navitem">
+        <a href="/apps.html">
+          <img src="./assets/images/apps.png">
+          <span class="nav-label">Apps</span>
+        </a>
+      </div>
+
+      <div class="navitem">
+        <a selected href="/emulator.html">
+          <img src="./assets/images/emulator.png">
+          <span class="nav-label">Emulator</span>
+        </a>
+      </div>
+
+      <div class="navitem">
+        <a href="/search.html">
+          <img src="./assets/images/search.png">
+          <span class="nav-label">Search</span>
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+  <iframe class="frame"></iframe>
+
+  <script>
+    document.querySelector('.frame').src =
+      '/service/' + __uv$config.encodeUrl('https://sites.google.com/view/emulatorjs/home/')
+  </script>
+
+  <script src="./js/index.js"></script>
+
+  <script type="text/javascript">
+    aclib.runAutoTag({ zoneId:'6hmeyutild' });
+  </script>
+
+</body>
+</html>
