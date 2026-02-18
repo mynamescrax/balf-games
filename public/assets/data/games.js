@@ -223,13 +223,6 @@ var games = [
     image: 'https://play-lh.googleusercontent.com/uJn2i9h7KxYQarC_c3K4qH6o7gLtflFnhD_dN14MNkzHJ1NeNFzCL69jpB5mT0vCoQs'
   },
   {
-    id: 'baldisbasics',
-    title: 'Baldi\'s Basics',
-    description: 'A horror-comedy school game where you solve math problems and avoid Baldi roaming the halls.',
-    url: 'https://frogiesarcade.win/stuff/selfhosted/baldis-basics/',
-    image: 'https://frogiesarcade.win/stuff/games/baldi.png'
-  },
-  {
     id: 'buildnowgg',
     title: "Buildnow.gg",
     description: 'A fast-paced online shooting and building game inspired by battle royale mechanics and competitive arenas.',
@@ -303,7 +296,7 @@ var games = [
     id: 'bitlife',
     title: 'Bitlife',
     description: 'A life simulation game where your choices shape your character’s story from childhood to old age.',
-    url: 'https://theunblock3dlabs.github.io/sourced/play/bitlife/',
+    url: 'https://frogiesarcade.win/stuff/selfhosted/bitlife/',
     image: 'https://d.newsweek.com/en/full/1317374/bitlife-ribbons-how-get-all-complete-list-android-ios-cheats-guide-tips-become.jpg?w=1600&h=1600&q=88&f=75befc746fb83a0c568c44ca07bc5e64'
   },
   {
