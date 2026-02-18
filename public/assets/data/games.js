@@ -59,7 +59,7 @@ var games = [
     title: 'Steal a Brainrot',
     description: 'Steal a Brainrot is a 2025 multiplayer video game developed by SpyderSammy (also known as Sammy). In the game, players buy and steal Brainrots, characters based on the Italian brainrot meme, which generate income over time.',
     url: 'https://db.duckmath.org/html/steal_a_brainrot_2/',
-    image: 'https://tr.rbxcdn.com/180DAY-7f4eecc799f207181e38fff7122b73fa/768/432/Image/Webp/noFilter'
+    image: 'https://sm.ign.com/ign_nordic/cover/s/steal-a-br/steal-a-brainrot-roblox_4pvv.jpg'
   },
   {
     id: 'crazycattle3d',
@@ -73,14 +73,14 @@ var games = [
     title: 'Cookie Clicker 2',
     description: 'Cookie Clicker is an addictive incremental game where players click to produce cookies, unlock upgrades, and aim to amass an ever-growing mountain of delicious digital treats. IF YOU WANT TO SAVE PRESS OPTIONS THEN PRESS SAVE OR IT WILL NOT SAVE! unless you wait 60 seconds.',
     url: 'https://games-online.io/game/cake-maker/',
-    image: 'https://cdn.discordapp.com/icons/339131488111034389/73f15cd93d96504af9877a53816d110c.png'
+    image: 'https://play-lh.googleusercontent.com/qiTKdSxk5XUk6MGJj1r-dMwXwd5Mx-rR3xQNB339OdxwXzFeqMXceMjpkK3316fMAw'
   },
   {
     id: 'cookieclicker',
-    title: 'Cookie Clicker ',
+    title: 'Cookie Clicker',
     description: 'Cookie Clicker is an addictive incremental game where players click to produce cookies, unlock upgrades, and aim to amass an ever-growing mountain of delicious digital treats. IF YOU WANT TO SAVE PRESS OPTIONS THEN PRESS SAVE OR IT WILL NOT SAVE! unless you wait 60 seconds.',
     url: 'https://pisaucer.github.io/boredhtml/games/cookieclicker/',
-    image: 'https://cdn.discordapp.com/icons/339131488111034389/73f15cd93d96504af9877a53816d110c.png'
+    image: 'https://super142.wordpress.com/wp-content/uploads/2022/07/cookie-clicker.jpg'
   },
   {
     id: 'thereisnogame',
@@ -126,10 +126,10 @@ var games = [
   },
   {
     id: 'papaburgers',
-    title: 'Papa\'s Burgeria',
+    title: 'Papa's Burgeria',
     description: 'Take customer orders, grill patties, and build perfect burgers in this fast-paced restaurant management game.',
     url: 'https://papasgamesfree.io/play/papas-burgeria/',
-    image: 'https://i.flipline.com/gamefiles/papasburgeriatogo/app_upsell_C.jpg'
+    image: 'https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/4fad37685af404ca0f987d927358ab79/papas-burgeria.jfif'
   },
   {
     id: 'papasicecream',
