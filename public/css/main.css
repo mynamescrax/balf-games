@@ -1,0 +1,258 @@
+@import url(themes.css);
+@import url(cards.css);
+
+/* =========================
+   Scrollbar
+   ========================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* =========================
+   Typography
+   ========================= */
+
+h1, h2, h3 {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-size: 50px;
+  line-height: 1.1;
+}
+
+#splash {
+  font-size: 24px;
+}
+
+p {
+  font-size: 20px;
+}
+
+h1 > span {
+  color: var(--accent);
+}
+
+/* =========================
+   Center Layout (Home/About/Settings)
+   ========================= */
+
+/* Centered hero-style pages (index/about/settings etc) */
+.center-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  /* Prevent super wide content on large screens */
+  width: min(900px, calc(100vw - 40px));
+}
+
+/* On short screens, don't trap content off-screen */
+@media (max-height: 650px) {
+  .center-container {
+    position: static;
+    transform: none;
+    margin: 80px auto;
+  }
+}
+
+/* =========================
+   Links
+   ========================= */
+
+a, a:visited {
+  color: var(--accent);
+  text-decoration: none;
+  transition: 0.4s all;
+}
+
+a:hover {
+  text-decoration: underline;
+  filter: brightness(80%);
+}
+
+/* =========================
+   Buttons
+   ========================= */
+
+button {
+  color: var(--background);
+  background-color: var(--accent);
+  padding: 8px 15px;
+  border: none;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.4s all;
+}
+
+button:hover {
+  filter: brightness(80%);
+  cursor: pointer;
+}
+
+/* =========================
+   Input Styling (Search Boxes etc)
+   ========================= */
+
+input[type="text"],
+.input,
+.pxyinput {
+  background-color: #111;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  padding: 8px 15px;
+  margin: 10px auto;
+  display: block;
+
+  /* Make inputs responsive */
+  width: min(600px, calc(100vw - 40px));
+}
+
+input[type="text"]:focus,
+.input:focus,
+.pxyinput:focus {
+  outline: none;
+}
+
+/* Specifically your apps/games search bar */
+#search {
+  width: min(520px, calc(100vw - 40px));
+  height: 45px;
+}
+
+/* =========================
+   Apps / Games Page Layout
+   ========================= */
+
+/*
+  This is the “looks centered” fix for your screenshot:
+  - adds top padding so it doesn’t hug the top
+  - keeps a centered column feel
+  - still scrolls normally (important for lots of cards)
+*/
+.page-center {
+  width: min(1600px, 100%);
+  margin: 0 auto;
+
+  /* less “floating centered”, more “library page” */
+  padding: 80px 24px 40px 24px;
+  text-align: center;
+}
+
+.page-center h1 {
+  margin-bottom: 10px;
+}
+
+.page-center input {
+  margin-bottom: 22px;
+}
+
+
+/* Keep card groups centered and spaced */
+.cardgroup {
+  width: 100%;
+  margin: 0 auto 60px auto;
+}
+
+/* =========================
+   Game Page Layout (load.html)
+   ========================= */
+
+.gamecontainer {
+  height: calc(100vh - 30px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+  gap: 15px;
+}
+
+/* Right info panel */
+#gameInfo {
+  width: 25%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  padding: 16px;
+  gap: 14px;
+}
+
+/* Header (image + title) */
+#gameInfo .gameHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Small thumbnail ONLY on load page */
+#gameInfo .gameHeader #gameImage {
+  width: 125px;
+  height: 125px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Wrap long titles/descriptions */
+#gameTitle,
+#gameDescription {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Button row */
+#menubtns {
+  position: static;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   Iframes
+   ========================= */
+
+/* Main game iframe (load.html) */
+#frame {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: white;
+  border: none;
+}
+
+/* Full-page iframe pages (emulator/search) */
+.frame {
+  border-radius: 5px;
+  background-color: white;
+  display: block;
+  margin: auto;
+  border: none;
+
+  height: calc(100vh - 30px);
+  width: calc(100vw - 30px);
+}

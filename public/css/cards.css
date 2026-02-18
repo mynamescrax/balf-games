@@ -1,0 +1,82 @@
+@import url(themes.css);
+
+/* =========================
+   Card Grid (wide, scrollable)
+   ========================= */
+
+.cardgroup {
+  /* wide grid like the screenshot site */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 18px;
+
+  padding: 24px;
+  width: 100%;
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* =========================
+   Individual Card (tile style)
+   ========================= */
+
+.card {
+  width: 100%;
+  max-width: 190px;      /* keeps tiles from getting huge on ultra-wide screens */
+  padding: 0;            /* tiles should be tight */
+  margin: 0;
+  text-align: center;
+  cursor: pointer;
+
+  border-radius: 18px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* The image becomes the “tile” */
+.card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+
+  border-radius: 18px;
+  display: block;
+}
+
+/* Title / label under the tile */
+.card p,
+.card span {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.2;
+  opacity: 0.95;
+
+  /* wrap nicely */
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Optional description */
+.description {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* Hover: subtle lift, not huge glow */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.30);
+}
+
+/* Responsive tweaks */
+@media (max-width: 520px) {
+  .cardgroup {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 14px;
+    padding: 18px;
+  }
+
+  .card {
+    max-width: none;
+  }
+}
