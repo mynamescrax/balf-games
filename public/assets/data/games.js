@@ -83,13 +83,6 @@ var games = [
     image: 'https://www.softgozar.com/Image/Softwares/Thumbnail/Rocket_League_Anniversary_SoftGozar.com.png'
   },
   {
-    id: 'petrocksimulator',
-    title: 'Pet Rock Simulator',
-    description: 'Take care of your own pet rock!',
-    url: 'https://html-classic.itch.zone/html/16502919/index.html?v=1771272639',
-    image: 'assets/images/petrocksim.png',
-  },
-  {
     id: 'repo',
     title: 'R.E.P.O',
     description: 'R.E.P.O. is an online cooperative survival horror video game developed and published by Swedish game studio Semiwork for Windows. CLICK ON THE SCREEN IF IT DOESNT LOOK LIKE ITS LOADING!',
