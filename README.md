@@ -7,7 +7,7 @@ Try out our site at balf-games.vercel.app!
 
 ## Deploy to a cloud service
 Currently i've only tested this on vercel and it works fine.
-[![Deploy to Vercel](https://binbashbanana.github.io/deploy-buttons/buttons/remade/vercel.svg)](https://vercel.com/new/clone?repository-url=https://github.com/Louct/balf-games)
+[![Deploy to Vercel](https://binbashbanana.github.io/deploy-buttons/buttons/remade/vercel.svg)](https://vercel.com/new/clone?repository-url=https://github.com/mynamescrax/balf-games)
 
 ## Run locally
 
