@@ -1,0 +1,133 @@
+:root {
+  --accent: #7c3aed;
+}
+
+/* =========================
+   Apple-Style Glass Sidebar
+   ========================= */
+
+.sidebar {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%) translateX(calc(100% - 16px));
+
+  width: 110px;
+  height: auto;
+  max-height: 75vh;          /* prevents giant sidebar */
+  padding: 18px 0;
+
+  background: rgba(40, 40, 45, 0.65);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 28px 0 0 28px;
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    -8px 0 30px rgba(0,0,0,0.35);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+  z-index: 9999;
+}
+
+/* Soft subtle edge instead of bright blue */
+.sidebar-edge {
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 16px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+
+  cursor: pointer;
+  z-index: 2;
+}
+
+
+
+/* Click open */
+.nav-toggle:checked ~ .sidebar {
+  transform: translateY(-50%) translateX(0);
+}
+
+.logo-img {
+  width: 40px !important;
+  height: 40px;
+  object-fit: contain;
+}
+
+.navitem img {
+  width: 40px !important;
+  height: 40px;
+  object-fit: contain;
+}
+
+.navitems {
+  gap: 16px;
+}
+
+.navitem img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+.nav-label { display: none; }
+
+/* Hidden checkbox */
+.nav-toggle {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* =========================
+   Mobile compatibility pack
+   ========================= */
+
+/* Phones/tablets: make the nav usable without hover */
+@media (max-width: 700px) {
+  .sidebar {
+    top: auto;
+    bottom: 14px;
+    right: 14px;
+    transform: none;
+
+    width: 64px;
+    padding: 12px 0;
+    border-radius: 22px;
+    max-height: 70vh;
+  }
+
+  /* Disable hover-open behavior on touch */
+  .sidebar:hover {
+    transform: none;
+  }
+
+  /* Hide the little edge grabber if present */
+  .sidebar-edge {
+    display: none;
+  }
+
+  /* Tighten icon sizes so it fits */
+  .logo-img,
+  .navitem img {
+    width: 34px !important;
+    height: 34px;
+  }
+
+  .navitems { gap: 12px; }
+}
+
