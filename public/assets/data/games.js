@@ -17,7 +17,7 @@ var games = [
     title: 'Crazy Kitty 3D',
     description: 'crazy chicken but kitten.',
     html: 'assets/games/crazykitty3d.html',
-    image: 'assets/images/crazykitty.png'
+    image: 'assets/images/crazykitty3d.png'
   },
   {
     id: 'crazychicken3d',
@@ -506,3 +506,4 @@ if (customgames) customgames.forEach(game => {
 
 console.log("Loaded " + games.length + " games")
 if (customgames) console.log("Loaded " + customgames.length + " custom games")
+
