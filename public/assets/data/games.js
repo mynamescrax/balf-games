@@ -487,6 +487,13 @@ var games = [
     description: 'Battle other players in a quick, chaotic arena brawler with simple controls and fast rounds.',
     url: 'https://lagged.com/api/play2/brawlguys2/',
     image: 'https://play-lh.googleusercontent.com/EiElcSrd6-o-19roiswSx0AZPzsq6qF3hUGHsSWDl5UVtj7G23DHkneM8ucwqyOmEg'
+  },
+  {
+    id: 'ddlc+',
+    title: 'Doki Doki Literature Club Plus+',
+    description: 'why.',
+    url: 'https://helpdesk.sentinet.co.za/resources/semag/ddlcplus/index.html',
+    image: 'https://helpdesk.sentinet.co.za/resources/semag/ddlcplus/web-presplash.jpg'
   }
 ]
 games.sort(function (a, b) {
