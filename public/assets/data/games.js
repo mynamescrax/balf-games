@@ -490,9 +490,9 @@ var games = [
   },
   {
     id: 'ddlc+',
-    title: 'Doki Doki Literature Club Plus+',
+    title: 'Doki Doki Literature Club',
     description: 'why.',
-    url: 'https://helpdesk.sentinet.co.za/resources/semag/ddlcplus/index.html',
+    url: 'https://gamingshitposting.github.io/ext-bin-1/games/DDLC-1.1.1-web/index.html',
     image: 'https://helpdesk.sentinet.co.za/resources/semag/ddlcplus/web-presplash.jpg'
   }
 ]
