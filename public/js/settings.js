@@ -14,16 +14,6 @@ function setTab(name = document.querySelector('#tabname').value, icon = document
 
 }
 
-const defaultTheme = "default"; // 👈 change to whatever your default is
-
-const savedTheme = localStorage.getItem("theme") || defaultTheme;
-
-// apply theme to <body>
-setTheme(savedTheme);
-
-// sync the dropdown
-const themeSelect = document.querySelector("#theme-select");
-if (themeSelect) themeSelect.value = savedTheme;
 
 var tabPresets = {
     google: {
@@ -95,3 +85,16 @@ function setPanicUrl() {
 }
 
 
+const defaultTheme = "main";
+
+const savedTheme = localStorage.getItem("theme") || defaultTheme;
+
+// Apply theme immediately
+document.body.setAttribute("theme", savedTheme);
+
+// Keep it saved
+localStorage.setItem("theme", savedTheme);
+
+// Sync the dropdown (if it exists)
+const themeSelect = document.querySelector("#theme-select");
+if (themeSelect) themeSelect.value = savedTheme;
