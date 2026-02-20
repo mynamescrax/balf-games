@@ -8,7 +8,8 @@ var apps = [
        id: 'poki',
        title: 'Poki unblocked games',
        url: 'https://poki.com/',
-       image: 'https://play-lh.googleusercontent.com/FBwBJqAv2KjTXRDRaEkrY3r2PJUWZbru1Y-6VyQY4Sku776mLJ2fIh1nMqzsmGdXUPI=w600-h300-pc0xffffff-pd'
+       image: 'https://play-lh.googleusercontent.com/FBwBJqAv2KjTXRDRaEkrY3r2PJUWZbru1Y-6VyQY4Sku776mLJ2fIh1nMqzsmGdXUPI=w600-h300-pc0xffffff-pd',
+       noProxy: true
     },
     {
        id: 'helios',
@@ -34,7 +35,8 @@ var apps = [
        id: 'crazygames',
        title: 'Crazygames unblocked games',
        url: 'https://www.crazygames.com/',
-       image: 'https://upload.wikimedia.org/wikipedia/commons/f/f3/Crazygames_jpg_logo.jpg'
+       image: 'https://upload.wikimedia.org/wikipedia/commons/f/f3/Crazygames_jpg_logo.jpg',
+       noProxy: true
     },
     {
       'id': 'neal',
