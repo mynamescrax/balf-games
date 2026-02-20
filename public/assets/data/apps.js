@@ -21,7 +21,7 @@ var apps = [
        id: 'spencerflix',
        title: 'Spen-Flix',
        url: 'https://watch.spencerdevs.xyz/',
-       image: 'https://watch.spencerdevs.xyz/images/spenflix-logo.png',
+       image: 'https://watch.spencerdevs.xyz/images/spenflix-banner-stars.png',
        noProxy: true
     },
     {
@@ -115,3 +115,4 @@ var apps = [
   
   console.log("Loaded " + apps.length + " apps")
   if (customapps) console.log("Loaded " + customapps.length + " custom apps")
+
