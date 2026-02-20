@@ -489,11 +489,11 @@ var games = [
     image: 'https://play-lh.googleusercontent.com/EiElcSrd6-o-19roiswSx0AZPzsq6qF3hUGHsSWDl5UVtj7G23DHkneM8ucwqyOmEg'
   },
   {
-    id: 'ddlc+',
+    id: 'ddlc',
     title: 'Doki Doki Literature Club',
     description: 'why.',
     url: 'https://gamingshitposting.github.io/ext-bin-1/games/DDLC-1.1.1-web/index.html',
-    image: 'https://helpdesk.sentinet.co.za/resources/semag/ddlcplus/web-presplash.jpg'
+    image: 'https://upload.wikimedia.org/wikipedia/en/7/7c/Doki_Doki_Literature_Club_Cover.jpg'
   }
 ]
 games.sort(function (a, b) {
