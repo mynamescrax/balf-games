@@ -24,7 +24,7 @@ var games = [
     title: 'Crazy Chicken 3d',
     description: 'crazy cattle but chicken.',
     url: 'https://html-classic.itch.zone/html/13448030/crazychicken%20web%20port/index.html',
-    image: 'assets/images/crazychicken3d.png'
+    image: 'https://cdn.jsdelivr.net/gh/gn-math/covers@main/255.png'
   },
   {
     id: 'dummiesworldcup',
