@@ -100,4 +100,24 @@ body::after{
 }
 
 
+.online-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 8px 16px;
+  background: rgba(15, 23, 42, 0.9); /* dark, semi-transparent */
+  color: #e5e7eb;
+  font-size: 14px;
+  text-align: center;
+  z-index: 20; /* above canvas + content */
+  backdrop-filter: blur(6px);
+}
+
+/* optional: make the number stand out */
+.online-bar #online-count {
+  font-weight: 600;
+  color: #a855f7; /* purple accent */
+}
+
 
