@@ -552,3 +552,30 @@ body::after {
   display: inline-block;
 }
 
+
+/* ==============================================
+   FIX CONSTELLATION CANVAS STACKING ON MOBILE
+   ============================================== */
+#constellationCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -2 !important;     /* Changed from -1 → goes BEHIND pseudo-elements */
+}
+
+/* Make sure body's pseudo-elements stay in front of canvas but behind content */
+body::before {
+  z-index: -4;
+}
+
+body::after {
+  z-index: -3;
+}
+
+/* Optional safety: force body to create its own stacking context */
+body {
+  position: relative;
+  z-index: 0;
+}
