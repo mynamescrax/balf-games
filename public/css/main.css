@@ -264,14 +264,14 @@ input[type="text"]:focus,
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  background-color: white;
+  background-color: transparent;
   border: none;
 }
 
 /* Full-page iframe pages (emulator/search) */
 .frame {
   border-radius: 5px;
-  background-color: white;
+  background-color: transparent;
   display: block;
   margin: auto;
   border: none;
@@ -552,36 +552,3 @@ body::after {
   display: inline-block;
 }
 
-
-
-/* =========================
-   Purple card-style content areas
-   ========================= */
-.center-container,
-.page-center,
-.more-wrap,
-.gamecontainer {
-  background: rgba(52, 16, 92, 0.96);
-  border-radius: 24px;
-  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.55);
-  padding: 32px 24px;
-  margin: 40px auto;
-  width: min(1100px, calc(100vw - 32px));
-}
-
-@media (max-width: 600px) {
-  .center-container,
-  .page-center,
-  .more-wrap,
-  .gamecontainer {
-    padding: 20px 16px;
-    margin: 24px auto;
-    border-radius: 18px;
-  }
-}
-
-/* Make big iframes not force a white rectangle */
-#frame,
-.frame {
-  background-color: transparent !important;
-}
