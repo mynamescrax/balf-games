@@ -21,7 +21,6 @@
 
 /* Normal body layout */
 body {
-  /* HARD-CODED PURPLE BACKGROUND */
   background: linear-gradient(
     135deg,
     #3b0a3f 0%,
@@ -29,9 +28,7 @@ body {
     #3c1361 100%
   ) !important;
 
-  /* Text color */
   color: #ffffff;
-
   min-height: 100vh;
   margin: 0;
   position: relative;
@@ -128,5 +125,6 @@ body::after{
   font-weight: 600;
   color: #a855f7; /* purple accent */
 }
+
 
 
