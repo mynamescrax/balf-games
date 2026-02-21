@@ -19,6 +19,13 @@ var apps = [
        noProxy: true
     },
     {
+       id: 'pstream',
+       title: 'P-Stream',
+       url: 'https://p-stream.mov/',
+       image: 'https://pstream.mov/apple-touch-icon.png?v=2',
+       noProxy: true
+    },
+    {
        id: 'spencerflix',
        title: 'Spen-Flix',
        url: 'https://frogiesarcade.win/embed.html#https://watch.spencerdevs.xyz/',
