@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="./assets/images/icon.png" type="image/png" />
+    <title>Balf Games</title>
+
+    <link rel="stylesheet" href="./css/themes.css" />
+    <link rel="stylesheet" href="./css/master.css" />
+    <link rel="stylesheet" href="./css/nav.css" />
+
+    <style>
+      /* Compact settings page layout */
+      .center-container {
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 28px 16px 40px;
+        text-align: center;
+        position: static !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+      }
+
+      .center-container h1 {
+        margin: 0 0 14px;
+        font-size: 2.1rem;
+      }
+
+      .center-container h2 {
+        margin: 18px 0 6px;
+        font-size: 1.45rem;
+      }
+
+      .center-container h4 {
+        max-width: 720px;
+        margin: 4px auto 12px;
+        line-height: 1.3;
+        font-size: 0.96rem;
+        opacity: 0.9;
+      }
+
+      .center-container input,
+      .center-container select {
+        width: min(480px, 92vw);
+        max-width: 100%;
+        padding: 9px 11px;
+        margin: 6px 0;
+        box-sizing: border-box;
+        font-size: 0.98rem;
+      }
+
+      .form-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin: 4px 0 10px;
+      }
+
+      .form-row input {
+        flex: 1 1 300px;
+        min-width: min(300px, 92vw);
+        margin: 0;
+      }
+
+      .center-container button.secondary,
+      .center-container a.button.secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 9px 14px;
+        font-size: 0.94rem;
+        min-width: 110px;
+        margin: 0;
+        white-space: nowrap;
+      }
+
+      .tab-presets {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin: 8px 0 4px;
+      }
+
+      .tab-presets button.secondary {
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        border-radius: 10px;
+      }
+
+      .tab-presets img {
+        width: 22px;
+        height: 22px;
+        object-fit: contain;
+      }
+
+      .bottom-links {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin: 18px 0 6px;
+      }
+
+      .bottom-links a.button.secondary {
+        padding: 8px 16px;
+        font-size: 0.92rem;
+      }
+
+      @media (max-width: 600px) {
+        .center-container {
+          padding: 20px 14px 36px;
+        }
+        .center-container h1 {
+          font-size: 1.9rem;
+        }
+        .form-row {
+          gap: 6px;
+          margin: 3px 0 8px;
+        }
+      }
+    </style>
+
+    <script src="/uv/uv.bundle.js" charset="UTF-8"></script>
+    <script src="/uv/uv.config.js"></script>
+    <script src="./js/preload.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+  </head>
+
+  <body theme="main">
+    <canvas id="constellationCanvas"></canvas>
+
+    <!-- Sidebar Toggle -->
+    <input type="checkbox" id="navToggle" class="nav-toggle" />
+
+    <nav class="sidebar">
+      <label for="navToggle" class="sidebar-edge" aria-label="Toggle sidebar"></label>
+
+      <div class="logo">
+        <a href="/index.html">
+          <img src="./assets/images/icon.png" alt="Balf Games Logo" draggable="false" class="logo-img" />
+        </a>
+      </div>
+
+      <p id="time"></p>
+
+      <div class="navitems">
+        <div class="navitem">
+          <a href="/index.html">
+            <img src="./assets/images/home.png" alt="Home" draggable="false" />
+            <span class="nav-label">Home</span>
+          </a>
+        </div>
+        <div class="navitem">
+          <a href="/maths.html">
+            <img src="./assets/images/games.png" alt="Games" draggable="false" />
+            <span class="nav-label">Games</span>
+          </a>
+        </div>
+        <div class="navitem">
+          <a href="/apps.html">
+            <img src="./assets/images/apps.png" alt="Apps" draggable="false" />
+            <span class="nav-label">Apps</span>
+          </a>
+        </div>
+        <div class="navitem">
+          <a href="/emulator.html">
+            <img src="./assets/images/emulator.png" alt="Emulator" draggable="false" />
+            <span class="nav-label">Emulator</span>
+          </a>
+        </div>
+        <div class="navitem">
+          <a href="/search.html">
+            <img src="./assets/images/search.png" alt="Search" draggable="false" />
+            <span class="nav-label">Search</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="center-container">
+      <h1>Settings</h1>
+
+      <h2>Tab cloaking</h2>
+      <h4>Change what this tab looks like in the browser tab bar.</h4>
+
+      <div class="form-row">
+        <input type="text" id="tabname" placeholder="Tab name" />
+        <button onclick="setTab()" class="secondary">Set name</button>
+      </div>
+
+      <div class="form-row">
+        <input type="text" id="tabicon" placeholder="Tab icon URL" />
+        <button onclick="setTab()" class="secondary">Set icon</button>
+      </div>
+
+      <div class="tab-presets" aria-label="Tab cloak presets">
+        <button class="secondary" onclick="setTabPreset('default')" title="Default">
+          <img src="/assets/images/icon.png" alt="Default" />
+        </button>
+        <button class="secondary" onclick="setTabPreset('google')" title="Google">
+          <img src="https://s3-alpha.figma.com/hub/file/2729744958/2a5758d6-4edb-4047-87bb-e6b94dbbbab0-cover.png" alt="Google" />
+        </button>
+        <button class="secondary" onclick="setTabPreset('drive')" title="Google Drive">
+          <img src="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png" alt="Google Drive" />
+        </button>
+        <button class="secondary" onclick="setTabPreset('docs')" title="Google Docs">
+          <img src="https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico" alt="Google Docs" />
+        </button>
+        <button class="secondary" onclick="setTabPreset('classroom')" title="Google Classroom">
+          <img src="https://ssl.gstatic.com/classroom/ic_product_classroom_32.png" alt="Google Classroom" />
+        </button>
+      </div>
+
+      <h2>Theme</h2>
+      <h4>Your choice is saved in this browser.</h4>
+      <div class="form-row">
+        <select id="theme-select" onchange="onThemeChange()">
+          <option value="main">Default (Purple)</option>
+          <option value="main">Light (Purple)</option>
+        </select>
+      </div>
+
+      <h2>Panic Key</h2>
+      <h4>Choose a key you rarely press (it triggers instantly).</h4>
+
+      <div class="form-row">
+        <input type="text" id="panickey" placeholder="Panic key" />
+        <button onclick="setPanicKey()" class="secondary">Set key</button>
+      </div>
+
+      <div class="form-row">
+        <input type="text" id="panicurl" placeholder="Redirect URL" />
+        <button onclick="setPanicUrl()" class="secondary">Set URL</button>
+      </div>
+
+      <div class="form-row">
+        <button onclick="detectPanic()" id="panickeybtn" class="secondary">
+          Auto-detect key
+        </button>
+      </div>
+
+      <h2>Proxy</h2>
+      <h4>Default proxy engine for the Search page.</h4>
+      <div class="form-row">
+        <select id="proxy-select">
+          <option value="scramjet">Scramjet (default)</option>
+          <option value="uv">Ultraviolet</option>
+        </select>
+      </div>
+
+      <div class="bottom-links">
+        <a href="./about.html" class="button secondary">About</a>
+        <a href="./index.html" class="button secondary">Home</a>
+      </div>
+    </div>
+
+    <script src="./js/index.js"></script>
+    <script src="./js/settings.js"></script>
+    <script src="./js/constellations.js"></script>
+
+    <script type="text/javascript">
+      aclib.runAutoTag({ zoneId: "6hmeyutild" });
+    </script>
+
+    <script>
+      const PROXY_KEY = "proxyEngine";
+
+      function initProxySetting() {
+        const select = document.getElementById("proxy-select");
+        if (!select) return;
+
+        const saved = localStorage.getItem(PROXY_KEY) || "scramjet";
+        select.value = saved;
+
+        select.addEventListener("change", () => {
+          localStorage.setItem(PROXY_KEY, select.value);
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", initProxySetting);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=JetBrains+Mono:wght@300;400&display=swap');
+@import url(main.css);
+@import url(themes.css);
+@import url(nav.css);
+
+@font-face {
+  font-family: gg sans;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/ggsans.woff2) format("woff2");
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+/* Normal body layout */
+body {
+  background: var(--background);
+  color: var(--text-color);
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+  text-align: center;
+
+}
+
+/* Moving grid background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -3;
+
+  --grid-size: 42px;
+  --grid-line: rgba(255, 255, 255, 0.08);
+  --grid-glow: rgba(255, 255, 255, 0.03);
+
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px),
+    radial-gradient(circle at 50% 50%, var(--grid-glow), transparent 55%);
+
+  background-size:
+    var(--grid-size) var(--grid-size),
+    var(--grid-size) var(--grid-size),
+    900px 900px;
+
+  animation: grid-drift 14s linear infinite;
+}
+
+/* Animated starfield overlay */
+body::after{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+
+  /* 3-layer starfield for depth */
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.95) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255,255,255,0.65) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255,255,255,0.45) 1px, transparent 2px);
+  background-size: 220px 220px, 340px 340px, 520px 520px;
+  background-position: 0 0, 0 0, 0 0;
+
+  opacity: 0.55;
+  animation: stars-drift 40s linear infinite, stars-twinkle 6s ease-in-out infinite;
+}
+
+@keyframes stars-drift{
+  from { background-position:   0   0,   0   0,   0   0; }
+  to   { background-position: -220px 180px, 260px -320px, -520px 240px; }
+}
+
+@keyframes stars-twinkle{
+  0%,100% { opacity: 0.42; }
+  50%     { opacity: 0.70; }
+}
+
+
+@keyframes grid-drift {
+  from { background-position: 0 0, 0 0, 0 0; }
+  to   {
+    background-position:
+      var(--grid-size) var(--grid-size),
+      calc(var(--grid-size) * -1) var(--grid-size),
+      220px 120px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before { animation: none; }
+}
+
+
+.online-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 8px 16px;
+  background: rgba(15, 23, 42, 0.9); /* dark, semi-transparent */
+  color: #e5e7eb;
+  font-size: 14px;
+  text-align: center;
+  z-index: 20; /* above canvas + content */
+  backdrop-filter: blur(6px);
+}
+
+/* optional: make the number stand out */
+.online-bar #online-count {
+  font-weight: 600;
+  color: #a855f7; /* purple accent */
+}
+
+
+
+/* ==============================================
+   FORCE PURPLE BACKGROUND + BETTER VISIBILITY ON MOBILE
+   ============================================== */
+@media (max-width: 900px) {
+  body {
+    background: linear-gradient(135deg, #3b0a3f 0%, #5b1a6e 40%, #3c1361 100%) !important;
+  }
+
+  /* Make grid + starfield overlays more visible (they were too faint) */
+  body::before,
+  body::after {
+    opacity: 0.75 !important;   /* was probably ~0.55 or lower → increase contrast */
+  }
+
+  /* Optional: make constellation canvas pop more on small screens */
+  #constellationCanvas {
+    opacity: 0.9;
+  }
+}
+
+/* =========================
+   Custom cursors
+   ========================= */
+
+/* Default cursor (normal select) */
+body {
+  cursor: url("/assets/cursors/Normal-Select.cur"), auto;
+}
+
+/* Links and buttons (link select) */
+a,
+button,
+.button {
+  cursor: url("/assets/cursors/Link-Select.cur"), pointer;
+}
+
+/* Text inputs and editable areas (text select) */
+input[type="text"],
+input[type="search"],
+textarea,
+[contenteditable="true"] {
+  cursor: url("/assets/cursors/Text-Select.cur"), text;
+}
+
+/* Move / drag (apply .draggable to things you can drag) */
+.draggable {
+  cursor: url("/assets/cursors/Move.cur"), move;
+}
+
+/* Precision, e.g. canvas drawing tools */
+.precision {
+  cursor: url("/assets/cursors/Precision-Select.cur"), crosshair;
+}
+
+/* Help cursor */
+.help {
+  cursor: url("/assets/cursors/Help-Select.cur"), help;
+}
+
+/* Unavailable / disabled controls */
+.disabled,
+[disabled] {
+  cursor: url("/assets/cursors/Unavailable.cur"), not-allowed;
+}
+
+/* Horizontal resize (left-right) */
+.resize-x,
+.ew-resize {
+  cursor: url("/assets/cursors/Horizontal-Resize.cur"), ew-resize;
+}
+
+/* Vertical resize (up-down) */
+.resize-y,
+.ns-resize {
+  cursor: url("/assets/cursors/Vertical-Resize.cur"), ns-resize;
+}
+
+/* Diagonal resize (bottom-right / top-left) */
+.resize-diag-1,
+.nwse-resize {
+  cursor: url("/assets/cursors/diagonal-resize-1.cur"), nwse-resize;
+}
+
+/* Diagonal resize (bottom-left / top-right) */
+.resize-diag-2,
+.nesw-resize {
+  cursor: url("/assets/cursors/diagonal-resize-2.cur"), nesw-resize;
+}
+
+/* Alternate select example – maybe for special UI */
+.alt-select {
+  cursor: url("/assets/cursors/Alternate-Select.cur"), default;
+}
+
+/* Handwriting – for notes or signature fields */
+.handwriting {
+  cursor: url("/assets/cursors/Handwriting.cur"), text;
+}

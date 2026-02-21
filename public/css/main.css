@@ -1,0 +1,581 @@
+@import url(themes.css);
+@import url(cards.css);
+
+/* =========================
+   Scrollbar
+   ========================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* =========================
+   Typography
+   ========================= */
+
+h1, h2, h3 {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-size: 50px;
+  line-height: 1.1;
+}
+
+#splash {
+  font-size: 24px;
+}
+
+p {
+  font-size: 20px;
+}
+
+h1 > span {
+  color: var(--accent);
+}
+
+/* =========================
+   Center Layout (Home/About/Settings)
+   ========================= */
+
+/* Centered hero-style pages (index/about/settings etc) */
+.center-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  /* Prevent super wide content on large screens */
+  width: min(900px, calc(100vw - 40px));
+}
+
+/* On short screens, don't trap content off-screen */
+@media (max-height: 650px) {
+  .center-container {
+    position: static;
+    transform: none;
+    margin: 80px auto;
+  }
+}
+
+/* =========================
+   Links
+   ========================= */
+
+a, a:visited {
+  color: var(--accent);
+  text-decoration: none;
+  transition: 0.4s all;
+}
+
+a:hover {
+  text-decoration: underline;
+  filter: brightness(80%);
+}
+
+/* =========================
+   Buttons
+   ========================= */
+
+button {
+  color: var(--background);
+  background-color: var(--accent);
+  padding: 8px 15px;
+  border: none;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.4s all;
+}
+
+button:hover {
+  filter: brightness(80%);
+  cursor: pointer;
+}
+
+/* Anchor buttons (used on About/Settings links) */
+.button {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.18s transform ease, 0.18s filter ease, 0.18s background-color ease, 0.18s border-color ease;
+}
+
+.button.secondary {
+  background: rgba(15, 15, 22, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  color: var(--text-color);
+}
+
+.button.secondary:hover {
+  transform: translateY(-2px);
+  border-color: rgba(124, 58, 237, 0.35);
+  filter: none;
+  text-decoration: none;
+}
+
+/* =========================
+   Input Styling (Search Boxes etc)
+   ========================= */
+
+input[type="text"],
+.input,
+.pxyinput {
+  background-color: #111;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  padding: 8px 15px;
+  margin: 10px auto;
+  display: block;
+
+  /* Make inputs responsive */
+  width: min(600px, calc(100vw - 40px));
+}
+
+input[type="text"]:focus,
+.input:focus,
+.pxyinput:focus {
+  outline: none;
+}
+
+/* Specifically your apps/games search bar */
+#search {
+  width: min(520px, calc(100vw - 40px));
+  height: 45px;
+}
+
+/* =========================
+   Apps / Games Page Layout
+   ========================= */
+
+/*
+  This is the “looks centered” fix for your screenshot:
+  - adds top padding so it doesn’t hug the top
+  - keeps a centered column feel
+  - still scrolls normally (important for lots of cards)
+*/
+.page-center {
+  width: min(1600px, 100%);
+  margin: 0 auto;
+
+  /* less “floating centered”, more “library page” */
+  padding: 80px 24px 40px 24px;
+  text-align: center;
+}
+
+.page-center h1 {
+  margin-bottom: 10px;
+}
+
+.page-center input {
+  margin-bottom: 22px;
+}
+
+
+/* Keep card groups centered and spaced */
+.cardgroup {
+  width: 100%;
+  margin: 0 auto 60px auto;
+}
+
+/* =========================
+   Game Page Layout (load.html)
+   ========================= */
+
+.gamecontainer {
+  height: calc(100vh - 30px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+  gap: 15px;
+}
+
+/* Right info panel */
+#gameInfo {
+  width: 25%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  padding: 16px;
+  gap: 14px;
+}
+
+/* Header (image + title) */
+#gameInfo .gameHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Small thumbnail ONLY on load page */
+#gameInfo .gameHeader #gameImage {
+  width: 125px;
+  height: 125px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Wrap long titles/descriptions */
+#gameTitle,
+#gameDescription {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Button row */
+#menubtns {
+  position: static;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   Iframes
+   ========================= */
+
+/* Main game iframe (load.html) */
+#frame {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: white;
+  border: none;
+}
+
+/* Full-page iframe pages (emulator/search) */
+.frame {
+  border-radius: 5px;
+  background-color: white;
+  display: block;
+  margin: auto;
+  border: none;
+
+  height: calc(100vh - 30px);
+  width: calc(100vw - 30px);
+}
+
+
+/* =========================
+   "More" / About page style
+   ========================= */
+
+.more-wrap {
+  width: min(1100px, calc(100vw - 40px));
+  margin: 80px auto;
+  text-align: center;
+}
+
+/* Title like the purple screenshot */
+.more-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.more-plus {
+  font-size: 44px;
+  line-height: 1;
+  color: var(--accent);
+  filter: drop-shadow(0 10px 22px rgba(124, 58, 237, 0.35));
+}
+
+.more-title h1 {
+  font-size: 44px;
+  margin: 0;
+}
+
+/* 2 panels on top + one wide panel below */
+.more-grid{
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Top panels */
+.more-grid > .glass-panel{
+  flex: 1 1 420px;
+  max-width: 560px;
+}
+
+/* Bottom wide panel */
+.glass-panel-wide{
+  flex: 1 1 100%;
+  max-width: 1100px;
+}
+
+
+/* Glass panel */
+.glass-panel {
+  background: rgba(30, 30, 40, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+  padding: 26px;
+}
+
+.glass-panel-wide {
+  grid-column: 1 / -1;
+}
+
+/* Header inside panels */
+.panel-head {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.panel-icon {
+  font-size: 40px;
+  color: var(--accent);
+  opacity: 0.95;
+}
+
+.glass-panel h2 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.panel-sub {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.75;
+}
+
+/* Tile row like little app cards */
+.tile-row {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.tile {
+  width: 130px;
+  padding: 14px 12px;
+  border-radius: 16px;
+  background: rgba(15, 15, 22, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.tile:hover {
+  transform: translateY(-4px);
+  border-color: rgba(124, 58, 237, 0.35);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.tile-img {
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  user-select: none;
+}
+
+.tile-img.circle {
+  border-radius: 999px;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 10px auto;
+  overflow: hidden; /* clip images into circle */
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.tile-img.circle img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+.tile-img.dark {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.tile-img.red {
+  background: #ff3b4e;
+  color: white;
+}
+
+.tile-img.green {
+  background: #22c55e;
+  color: white;
+}
+
+.tile-label {
+  font-size: 14px;
+  opacity: 0.92;
+}
+
+.bottom-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+/* Starry overlay (keeps your existing animated grid underneath) */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.9) 1px, transparent 2px),
+    radial-gradient(circle at 70% 30%, rgba(255,255,255,0.7) 1px, transparent 2px),
+    radial-gradient(circle at 40% 80%, rgba(255,255,255,0.6) 1px, transparent 2px),
+    radial-gradient(circle at 85% 75%, rgba(255,255,255,0.7) 1px, transparent 2px),
+    radial-gradient(circle at 25% 55%, rgba(255,255,255,0.55) 1px, transparent 2px),
+    radial-gradient(circle at 55% 10%, rgba(255,255,255,0.5) 1px, transparent 2px);
+
+  opacity: 0.55;
+  filter: blur(0.1px);
+}
+
+/* =========================
+   Mobile compatibility pack
+   ========================= */
+
+/* Stack the game/app viewer layout on smaller screens */
+@media (max-width: 900px) {
+  .gamecontainer {
+    flex-direction: column;
+    height: auto;
+    margin: 12px;
+  }
+
+  #gameInfo {
+    width: 100%;
+    height: auto;
+    padding: 14px;
+  }
+
+  /* Give the iframe a sensible phone height */
+  #frame {
+    height: 70vh;
+    border-radius: 12px;
+  }
+}
+
+/* Scale typography and controls for small phones */
+@media (max-width: 520px) {
+  h1 { font-size: 36px; }
+  #splash { font-size: 18px; }
+  p { font-size: 16px; }
+  button { font-size: 16px; }
+
+  #frame { height: 68vh; }
+}
+
+/* Reduce hover-only effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .card:hover { transform: none; }
+}
+
+
+
+/* Constellation background canvas */
+#constellationCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1; /* above grid/stars, below content */
+}
+
+/* Make sure main content sits above the canvas */
+.center-container {
+  z-index: 1;
+}
+
+.page-center,
+.more-wrap,
+.gamecontainer,
+.frame {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Make sure the first button in #menubtns shows a ← even if Font Awesome is missing */
+#menubtns a:first-child button {
+  position: relative;
+  font-size: 0;            /* hide any missing icon text */
+}
+
+#menubtns a:first-child button::before {
+  content: "←";
+  font-size: 25px;
+  color: #fff;
+  display: inline-block;
+}
+
+
+/* ==============================================
+   FIX CONSTELLATION CANVAS STACKING ON MOBILE
+   ============================================== */
+#constellationCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -2 !important;     /* Changed from -1 → goes BEHIND pseudo-elements */
+}
+
+/* Make sure body's pseudo-elements stay in front of canvas but behind content */
+body::before {
+  z-index: -4;
+}
+
+body::after {
+  z-index: -3;
+}
+
+/* Optional safety: force body to create its own stacking context */
+body {
+  position: relative;
+  z-index: 0;
+}

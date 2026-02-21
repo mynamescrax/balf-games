@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="shortcut icon" href="./assets/images/icon.png" type="image/png" />
+    <title>Balf Games</title>
+
+    <!-- THEMES FIRST -->
+    <link rel="stylesheet" href="./css/themes.css" />
+    <link rel="stylesheet" href="./css/master.css" />
+    <link rel="stylesheet" href="./css/nav.css" />
+
+
+
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+
+<meta name="theme-color" content="#3b0a3f">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#3b0a3f">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#3b0a3f">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">  <!-- or "black-translucent" if you want overlay -->
+  </head>
+
+  <body theme="main">
+    <canvas id="constellationCanvas"></canvas>
+
+    <input type="checkbox" id="navToggle" class="nav-toggle" />
+
+    <nav class="sidebar">
+      <label for="navToggle" class="sidebar-edge" aria-label="Toggle sidebar"></label>
+
+      <div class="logo">
+        <a href="/">
+          <img src="./assets/images/icon.png" alt="Balf Games Logo" draggable="false" class="logo-img" />
+        </a>
+      </div>
+
+      <p id="time"></p>
+
+      <div class="navitems">
+        <div class="navitem">
+          <a selected href="/">
+            <img src="./assets/images/home.png" alt="Home" draggable="false" />
+            <span class="nav-label">Home</span>
+          </a>
+        </div>
+
+        <div class="navitem">
+          <a href="/maths.html">
+            <img src="./assets/images/games.png" alt="Games" draggable="false" />
+            <span class="nav-label">Games</span>
+          </a>
+        </div>
+
+        <div class="navitem">
+          <a href="/apps.html">
+            <img src="./assets/images/apps.png" alt="Apps" draggable="false" />
+            <span class="nav-label">Apps</span>
+          </a>
+        </div>
+
+        <div class="navitem">
+          <a href="/emulator.html">
+            <img src="./assets/images/emulator.png" alt="Emulator" draggable="false" />
+            <span class="nav-label">Emulator</span>
+          </a>
+        </div>
+
+        <div class="navitem">
+          <a href="/search.html">
+            <img src="./assets/images/search.png" alt="Search" draggable="false" />
+            <span class="nav-label">Search</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="center-container">
+      <h1>Welcome to Balf Games</h1>
+
+      <button onclick="window.location.href='https://forms.gle/ZBBpuZRX88qZVUAB7'" class="button play">
+        Please report ANY issue here!
+      </button>
+
+      <button onclick="launchab()" id="launchab" class="button play">
+        Launch in about:blank
+      </button>
+
+      <div class="bottom-links">
+        <a href="./settings.html" class="button secondary">Settings</a>
+        <a href="./about.html" class="button secondary">About</a>
+      </div>
+    </div>
+
+
+
+    <script src="./js/index.js"></script>
+    <script src="./js/constellations.js"></script>
+
+    <script>
+      aclib.runAutoTag({ zoneId: "6hmeyutild" });
+    </script>
+  
+<!-- =========================
+     RECENT UPDATES POPUP
+     ========================= -->
+
+<style>
+  .update-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  .update-modal {
+    background: #111827;
+    color: #f9fafb;
+    max-width: 420px;
+    width: 90%;
+    padding: 1.5rem 1.75rem;
+    border-radius: 14px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  .update-modal h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .update-modal p {
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    opacity: 0.9;
+  }
+
+  .update-list {
+    margin-bottom: 1rem;
+    padding-left: 1.1rem;
+    font-size: 0.9rem;
+  }
+
+  .update-list li {
+    margin-bottom: 0.3rem;
+  }
+
+  .update-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .update-modal button {
+    cursor: pointer;
+    border: none;
+    border-radius: 999px;
+    padding: 0.45rem 1rem;
+    font-size: 0.9rem;
+    background: #6d28d9;
+    color: white;
+    transition: 0.2s ease;
+  }
+
+  .update-modal button:hover {
+    opacity: 0.9;
+  }
+
+  @keyframes fadeIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+
+  .update-modal-backdrop.fade-out {
+    animation: fadeOut 0.25s ease forwards;
+  }
+</style>
+
+<div id="updateModalBackdrop" class="update-modal-backdrop">
+  <div class="update-modal">
+    <h2>Recent Updates</h2>
+    <p>Here’s what’s new:</p>
+
+    <ul class="update-list">
+      <li>Added new games</li>
+      <li>Removed Ultrakill (didn't work on iPads)</li>
+      <li>Added this menu</li>
+      <li>Fixed broken apps</li>
+     <li>fixed minecraft</li>
+     <li>whoever said custom url go bye bye go to settings and cloak it manually</li>
+     <li>u dont need custom sites just use the search</li>
+     <li>If search no work use the Helios browser in apps or just type the full link in our normal search (like youtube.com)</li>
+    </ul>
+
+    <div class="update-modal-footer">
+      <button id="updateModalClose">Got it</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const backdrop = document.getElementById("updateModalBackdrop");
+    const closeBtn = document.getElementById("updateModalClose");
+
+    backdrop.style.display = "flex";
+
+    function closeModal() {
+      backdrop.classList.add("fade-out");
+
+      setTimeout(() => {
+        backdrop.style.display = "none";
+        backdrop.classList.remove("fade-out");
+      }, 250);
+    }
+
+    closeBtn.addEventListener("click", closeModal);
+
+    backdrop.addEventListener("click", function (e) {
+      if (e.target === backdrop) {
+        closeModal();
+      }
+    });
+  });
+</script>
+
+<!-- =========================
+     END RECENT UPDATES POPUP
+     ========================= -->
+
+</body>
+</html>

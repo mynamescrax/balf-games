@@ -1,0 +1,19 @@
+/* ==============================
+   THEMES (Purple Unified)
+   ============================== */
+
+/* Main Theme (Purple) */
+body[theme="main"] {
+    --text-color: white;
+    --background: linear-gradient(135deg, #3b0a3f 0%, #5b1a6e 40%, #3c1361 100%);
+    --navbar: #140a1a;
+    --accent: #d946ef;
+}
+
+/* Light Theme — force same purple to avoid any light fallback */
+body[theme="light"] {
+    --text-color: white;
+    --background: linear-gradient(135deg, #3b0a3f 0%, #5b1a6e 40%, #3c1361 100%);
+    --navbar: #140a1a;
+    --accent: #d946ef;
+}
