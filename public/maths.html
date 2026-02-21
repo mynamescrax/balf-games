@@ -5,113 +5,119 @@
   <title>Balf Games</title>
 
   <link rel="stylesheet" href="./css/themes.css" />
-<link rel="stylesheet" href="./css/master.css" />
-<link rel="stylesheet" href="./css/nav.css" />
+  <link rel="stylesheet" href="./css/master.css" />
+  <link rel="stylesheet" href="./css/nav.css" />
 
   <script src="/uv/uv.bundle.js" charset="UTF-8"></script>
   <script src="/uv/uv.config.js"></script>
   <script src="./js/preload.js"></script>
 
   <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <!-- Apple Glass Purple Popup Style -->
+  <style>
+    #gamePopup {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      max-width: 420px;
+      width: calc(100% - 40px);
+      background: rgba(168, 85, 247, 0.15);
+      backdrop-filter: blur(25px) saturate(180%);
+      -webkit-backdrop-filter: blur(25px) saturate(180%);
+      border-radius: 20px;
+      padding: 18px 20px;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 
+        0 8px 30px rgba(168, 85, 247, 0.35),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+      display: none;
+      z-index: 9999;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+    }
+
+    #gamePopup.show {
+      display: block;
+      animation: slideIn 0.4s ease;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    #gamePopupHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    #gamePopupHeader .closeBtn {
+      cursor: pointer;
+      font-size: 16px;
+      opacity: 0.7;
+      transition: 0.2s ease;
+    }
+
+    #gamePopupHeader .closeBtn:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    #gamePopupContent {
+      font-size: 14px;
+      margin-top: 10px;
+      line-height: 1.6;
+      opacity: 0.95;
+    }
+
+    #gamePopupFooter {
+      margin-top: 14px;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.9;
+    }
+
+    #gamePopupFooter input {
+      accent-color: #c084fc;
+      cursor: pointer;
+    }
+
+    #gamePopupFooter label {
+      cursor: pointer;
+    }
+  </style>
 </head>
 
-<!-- Modern Alert Popup -->
-<style>
-  #alertOverlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-    z-index: 9999;
-  }
-
-  #alertOverlay.show {
-    opacity: 1;
-    pointer-events: all;
-  }
-
-  #alertBox {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    border-radius: 16px;
-    padding: 30px;
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-    color: white;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    transform: translateY(20px);
-    transition: transform 0.4s ease;
-    font-family: Arial, sans-serif;
-  }
-
-  #alertOverlay.show #alertBox {
-    transform: translateY(0);
-  }
-
-  #alertBox h2 {
-    margin-top: 0;
-    font-size: 24px;
-  }
-
-  #alertBox p {
-    margin: 15px 0 25px;
-    font-size: 15px;
-    opacity: 0.9;
-  }
-
-  #alertBox button {
-    background: #4CAF50;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 8px;
-    color: white;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background 0.2s ease, transform 0.1s ease;
-  }
-
-  #alertBox button:hover {
-    background: #45a049;
-    transform: scale(1.05);
-  }
-</style>
-
-<div id="alertOverlay">
-  <div id="alertBox">
-    <h2>Alert!</h2>
-    <p>Please report any broken games at the forums/issue center on the front page</p>
-    <button onclick="closeAlert()">OK</button>
-  </div>
-</div>
-
-<script>
-  function closeAlert() {
-    document.getElementById("alertOverlay").classList.remove("show");
-  }
-
-  window.addEventListener("load", function () {
-    if (!sessionStorage.getItem("alertShown")) {
-      document.getElementById("alertOverlay").classList.add("show");
-      sessionStorage.setItem("alertShown", "true");
-    }
-  });
-</script>
-
-
 <body theme="main">
+
+  <!-- Apple Glass Purple Popup -->
+  <div id="gamePopup">
+    <div id="gamePopupHeader">
+      <span>💜 Game not loading or showing a blank screen?</span>
+      <div class="closeBtn" onclick="closeGamePopup()">✕</div>
+    </div>
+
+    <div id="gamePopupContent">
+      Click the <strong>fullscreen icon</strong> on the right — this opens it on the entire screen.
+      You can also try refreshing the page. Be patient, maybe that will fix it.
+    </div>
+
+    <div id="gamePopupFooter">
+      <input type="checkbox" id="dontShowGamePopup">
+      <label for="dontShowGamePopup">Don't show again</label>
+    </div>
+  </div>
+
   <canvas id="constellationCanvas"></canvas>
 
-
-  <!-- Sidebar Toggle -->
   <input type="checkbox" id="navToggle" class="nav-toggle" />
 
   <nav class="sidebar">
@@ -158,9 +164,7 @@
     </div>
   </nav>
 
-  <!-- Centered Content -->
   <div class="page-center">
-
     <h1>Games</h1>
 
     <input 
@@ -177,17 +181,30 @@
     <button class="secondary" onclick="clearcustomgames()">
       Clear custom games
     </button>
-
   </div>
 
   <script src="./js/index.js"></script>
   <script src="./assets/data/games.js"></script>
   <script src="./js/games.js"></script>
+  <script src="./js/constellations.js"></script>
 
-    <script src="./js/constellations.js"></script>
-
-<script type="text/javascript">
+  <script type="text/javascript">
     aclib.runAutoTag({ zoneId:'6hmeyutild' });
+  </script>
+
+  <script>
+    function closeGamePopup() {
+      if (document.getElementById("dontShowGamePopup").checked) {
+        localStorage.setItem("hideGamePopup", "true");
+      }
+      document.getElementById("gamePopup").classList.remove("show");
+    }
+
+    window.addEventListener("load", function () {
+      if (!localStorage.getItem("hideGamePopup")) {
+        document.getElementById("gamePopup").classList.add("show");
+      }
+    });
   </script>
 
 </body>
