@@ -88,12 +88,20 @@ function clearcustomgames() {
   window.location.reload()
 }
 
-// Themes
-if (localStorage.getItem('theme')) {
-  document.body.setAttribute('theme', localStorage.getItem('theme'))
-} else {
-  document.body.setAttribute('theme', 'main')
-}
+// Themes (clamped, mobile-safe across all pages)
+(function applyTheme() {
+  const defaultTheme = 'main';
+  const allowedThemes = ['main'];
+  let saved = localStorage.getItem('theme') || defaultTheme;
+
+  if (!allowedThemes.includes(saved)) {
+    saved = defaultTheme;
+    localStorage.setItem('theme', saved);
+  }
+
+  document.body.setAttribute('theme', saved);
+  console.log('Applied theme:', saved);
+})();
 
 // Tab
 if (localStorage.getItem('tabIcon')) {
@@ -103,11 +111,6 @@ if (localStorage.getItem('tabIcon')) {
 if (localStorage.getItem('tabName')) {
   document.title = localStorage.getItem('tabName')
 }
-
-if (localStorage.getItem('theme')) {
-  document.body.setAttribute('theme', localStorage.getItem('theme'))
-}
-console.log(localStorage.getItem('theme'))
 
 // Panic
 document.addEventListener('keydown', async (e) => {
