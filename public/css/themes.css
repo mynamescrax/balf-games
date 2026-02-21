@@ -1,13 +1,59 @@
+/* =========================
+   THEME VARIABLES
+   ========================= */
+
 body[theme="main"] {
     --text-color: white;
 
     --background: linear-gradient(
         135deg,
-        #3b0a3f 0%,   /* deep plum */
-        #5b1a6e 40%,  /* muted magenta */
-        #3c1361 100%  /* dark purple */
+        #3b0a3f 0%,
+        #5b1a6e 40%,
+        #3c1361 100%
     );
 
     --navbar: #140a1a;
-    --accent: #d946ef;  /* softer pink accent */
+    --accent: #d946ef;
+}
+
+body[theme="light"] {
+    --text-color: #111;
+
+    --background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #f3f4f6 50%,
+        #e5e7eb 100%
+    );
+
+    --navbar: #e5e7eb;
+    --accent: #7c3aed;
+}
+
+/* =========================
+   APPLY VARIABLES GLOBALLY
+   ========================= */
+
+body {
+    background: var(--background);
+    color: var(--text-color);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.sidebar {
+    background: var(--navbar);
+}
+
+button,
+a.button,
+button.secondary,
+a.button.secondary {
+    background: var(--accent);
+    color: var(--text-color);
+    transition: 0.2s ease;
+}
+
+button:hover,
+a.button:hover {
+    opacity: 0.85;
 }
