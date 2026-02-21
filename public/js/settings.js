@@ -101,17 +101,30 @@ function setPanicUrl() {
     localStorage.setItem("panicurl", url.value);
 }
 
-// ===== Theme initialization =====
+// ==============================
+// THEME SYSTEM
+// ==============================
 
 const defaultTheme = "main";
-const savedTheme = localStorage.getItem("theme") || defaultTheme;
+
+function setTheme(theme) {
+    document.body.setAttribute("theme", theme);
+    localStorage.setItem("theme", theme);
+}
+
+function onThemeChange() {
+    const themeSelect = document.querySelector("#theme-select");
+    if (!themeSelect) return;
+    setTheme(themeSelect.value);
+}
 
 // Apply theme immediately on page load
-document.body.setAttribute("theme", savedTheme);
-localStorage.setItem("theme", savedTheme);
+(function initTheme() {
+    const savedTheme = localStorage.getItem("theme") || defaultTheme;
+    document.body.setAttribute("theme", savedTheme);
 
-// Sync dropdown if it exists (only on settings page)
-const themeSelect = document.querySelector("#theme-select");
-if (themeSelect) {
-    themeSelect.value = savedTheme;
-}
+    const themeSelect = document.querySelector("#theme-select");
+    if (themeSelect) {
+        themeSelect.value = savedTheme;
+    }
+})();
