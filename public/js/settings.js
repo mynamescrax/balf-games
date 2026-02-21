@@ -3,10 +3,13 @@
 // ==============================
 
 const defaultTheme = "main";
+// Only themes that actually exist in themes.css:
+const allowedThemes = ["main"];
 
 function setTheme(theme) {
-    document.body.setAttribute("theme", theme);
-    localStorage.setItem("theme", theme);
+    const safeTheme = allowedThemes.includes(theme) ? theme : defaultTheme;
+    document.body.setAttribute("theme", safeTheme);
+    localStorage.setItem("theme", safeTheme);
 }
 
 function onThemeChange() {
@@ -17,11 +20,20 @@ function onThemeChange() {
 
 // Apply theme immediately on page load
 (function initTheme() {
-    const savedTheme = localStorage.getItem("theme") || defaultTheme;
+    let savedTheme = localStorage.getItem("theme") || defaultTheme;
+
+    // If the saved value is from an old theme ("light", "dark", etc.),
+    // fall back to the current default.
+    if (!allowedThemes.includes(savedTheme)) {
+        savedTheme = defaultTheme;
+        localStorage.setItem("theme", savedTheme);
+    }
+
     document.body.setAttribute("theme", savedTheme);
 
     const themeSelect = document.querySelector("#theme-select");
     if (themeSelect) {
+        // Makes sure the dropdown matches the actual theme
         themeSelect.value = savedTheme;
     }
 })();
