@@ -264,14 +264,14 @@ input[type="text"]:focus,
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  background-color: white;
+  background-color: transparent;
   border: none;
 }
 
 /* Full-page iframe pages (emulator/search) */
 .frame {
   border-radius: 5px;
-  background-color: white;
+  background-color: transparent;
   display: block;
   margin: auto;
   border: none;
