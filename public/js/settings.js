@@ -1,5 +1,12 @@
+// ==============================
+// THEME SYSTEM
+// ==============================
+
+const defaultTheme = "main";
+
 function setTheme(theme) {
-    document.body.setAttribute("theme", theme);
+    // Apply theme to the root <html> element
+    document.documentElement.setAttribute("theme", theme);
     localStorage.setItem("theme", theme);
 }
 
@@ -9,6 +16,22 @@ function onThemeChange() {
     if (!themeSelect) return;
     setTheme(themeSelect.value);
 }
+
+// Initialize theme as early as possible
+(function initTheme() {
+    const savedTheme = localStorage.getItem("theme") || defaultTheme;
+    document.documentElement.setAttribute("theme", savedTheme);
+
+    // Sync dropdown if it exists (only on settings page)
+    const themeSelect = document.querySelector("#theme-select");
+    if (themeSelect) {
+        themeSelect.value = savedTheme;
+    }
+})();
+
+// ==============================
+// TAB / PANIC SETTINGS (unchanged)
+// ==============================
 
 function setTab(
     name = document.querySelector('#tabname').value,
@@ -100,31 +123,3 @@ function setPanicUrl() {
     var url = document.querySelector("#panicurl");
     localStorage.setItem("panicurl", url.value);
 }
-
-// ==============================
-// THEME SYSTEM
-// ==============================
-
-const defaultTheme = "main";
-
-function setTheme(theme) {
-    document.body.setAttribute("theme", theme);
-    localStorage.setItem("theme", theme);
-}
-
-function onThemeChange() {
-    const themeSelect = document.querySelector("#theme-select");
-    if (!themeSelect) return;
-    setTheme(themeSelect.value);
-}
-
-// Apply theme immediately on page load
-(function initTheme() {
-    const savedTheme = localStorage.getItem("theme") || defaultTheme;
-    document.body.setAttribute("theme", savedTheme);
-
-    const themeSelect = document.querySelector("#theme-select");
-    if (themeSelect) {
-        themeSelect.value = savedTheme;
-    }
-})();
