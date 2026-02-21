@@ -21,7 +21,7 @@ var apps = [
     {
        id: 'spencerflix',
        title: 'Spen-Flix',
-       url: 'https://watch.spencerdevs.xyz/',
+       url: 'https://frogiesarcade.win/embed.html#https://watch.spencerdevs.xyz/',
        image: 'https://i.ibb.co/4w97MssF/spenflix-logo.png',
        noProxy: true
     },
@@ -106,7 +106,7 @@ var apps = [
       'title': 'Palyra (Discord alternative)',
       'description': 'Please dont have any personal information or use a personal password on this website',
       'url': 'https://palyra.vercel.app',
-      'image': 'https://palyra.vercel.app/assets/icon-gU33obAG.png'
+      'image': 'https://palyra.vercel.app/images/icon.png'
     }
   ]
 
@@ -117,3 +117,4 @@ var apps = [
   
   console.log("Loaded " + apps.length + " apps")
   if (customapps) console.log("Loaded " + customapps.length + " custom apps")
+
