@@ -3,6 +3,30 @@
 @import url(themes.css);
 @import url(nav.css);
 
+
+/* Add this right after your @imports and @font-face */
+
+/* Force consistent purple background across all modes/devices */
+html, body {
+  background: #3b0a3f !important;
+  background: -webkit-linear-gradient(135deg, #3b0a3f 0%, #5b1a6e 40%, #3c1361 100%) !important;
+  background: linear-gradient(135deg, #3b0a3f 0%, #5b1a6e 40%, #3c1361 100%) !important;
+  color: #ffffff !important;
+}
+
+/* Handle prefers-color-scheme explicitly */
+@media (prefers-color-scheme: light),
+       (prefers-color-scheme: no-preference) {
+  html, body {
+    background: linear-gradient(135deg, #3b0a3f 0%, #5b1a6e 40%, #3c1361 100%) !important;
+  }
+}
+
+/* Boost pseudo-element visibility slightly if needed */
+body::before, body::after {
+  opacity: 0.7;  /* adjust 0.5–0.9 to taste — higher = stronger grid/stars */
+}
+
 @font-face {
   font-family: gg sans;
   font-style: normal;
@@ -21,6 +45,7 @@
 
 /* Normal body layout */
 body {
+  /* HARD-CODED PURPLE BACKGROUND */
   background: linear-gradient(
     135deg,
     #3b0a3f 0%,
@@ -28,7 +53,9 @@ body {
     #3c1361 100%
   ) !important;
 
+  /* Text color */
   color: #ffffff;
+
   min-height: 100vh;
   margin: 0;
   position: relative;
@@ -127,4 +154,36 @@ body::after{
 }
 
 
+/* Force purple on root elements early */
+html, body {
+  background: #3b0a3f !important;  /* solid dark purple fallback — prevents white flash */
+  background: linear-gradient(135deg, #3b0a3f 0%, #5b1a6e 40%, #3c1361 100%) !important;
+  color: white !important;
+  min-height: 100vh;
+}
+
+/* Explicitly override light mode preference (Safari/iPad can be aggressive here) */
+@media (prefers-color-scheme: light) {
+  html, body {
+    background: linear-gradient(135deg, #3b0a3f 0%, #5b1a6e 40%, #3c1361 100%) !important;
+    color: white !important;
+  }
+  body::before, body::after {
+    opacity: 0.8 !important;  /* make grid/stars more visible if they were faint */
+  }
+}
+
+/* Reinforce on dark too, just in case */
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background: linear-gradient(135deg, #3b0a3f 0%, #5b1a6e 40%, #3c1361 100%) !important;
+  }
+}
+
+/* Prevent any root white */
+:root {
+  background: inherit;
+}
+
+/* If using PWA or home screen add → help tint bars purple */
 
