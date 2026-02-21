@@ -331,7 +331,7 @@ var games = [
     id: 'minecraft',
     title: 'Minecraft / Eaglercraft',
     description: 'Build, explore, and survive in an open sandbox world made of blocks. Craft tools, mine resources, and create anything you imagine.',
-    url: 'https://helpdesk.sentinet.co.za/resources/semag/eag/18js/',
+    html: 'assets/games/minecraft.html',
     image: 'https://cdn.iconscout.com/icon/free/png-256/minecraft-2752120-2284937.png'
   },
   {
